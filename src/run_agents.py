@@ -7,7 +7,7 @@ import json
 
 agent_configs = sys.argv[1]
 q = JoinableQueue()
-NUM_THREADS = 40
+NUM_THREADS = 24
 
 def run_single_config(queue):
     while True:

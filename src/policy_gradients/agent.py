@@ -4,6 +4,7 @@ import time
 import dill
 import torch.nn as nn
 import torch.optim as optim
+from torch.utils.tensorboard import SummaryWriter
 import numpy as np
 from copy import deepcopy
 import gym
@@ -68,6 +69,7 @@ class Trainer():
         self.advanced_logging = advanced_logging
         self.n_steps = 0
         self.log_every = log_every
+        self.summary_writer = SummaryWriter()
 
         # Instantiation
         self.policy_model = policy_net_class(self.NUM_FEATURES, self.NUM_ACTIONS,
@@ -394,6 +396,13 @@ class Trainer():
 
             old_pds = select_prob_dists(out_train, detach=True)
             val_old_pds = select_prob_dists(out_val, detach=True)
+
+            self.summary_writer.add_histogram('advantages', saps.advantages,
+                    self.n_steps)
+            self.summary_writer.add_histogram('returns', saps.returns,
+                    self.n_steps)
+            self.summary_writer.add_histogram('values', saps.values,
+                    self.n_steps)
         # End logging code
 
         # Update the value function before unrolling the trajectories

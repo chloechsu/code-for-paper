@@ -9,14 +9,19 @@ with open("../MuJoCo.json") as f:
     BASE_CONFIG = json.load(f)
 
 PARAMS = {
-    "game": ["Humanoid-v2"],
+    # "game": ["Humanoid-v2"],
+    "game": ["Walker2d-v2"],
     "mode": ["ppo"],
     "out_dir": ["case_study_experiment/agents"],
-    "norm_rewards": ["none", "returns"],
-    "initialization": ["xavier", "orthogonal"],
-    "anneal_lr": [True, False],
+    # "norm_rewards": ["none", "returns"],
+    "norm_rewards": ["returns"],
+    # "initialization": ["xavier", "orthogonal"],
+    "initialization": ["orthogonal"],
+    # "anneal_lr": [True, False],
+    "anneal_lr": [True],
     "value_clipping": [True, False],
-    "ppo_lr_adam": iwt(1e-5, 2.9e-4, 7e-5, 5),
+    # "ppo_lr_adam": iwt(1e-5, 2.9e-4, 7e-5, 5),
+    "ppo_lr_adam": iwt(1e-4, 1.1e-4, 1e-4, 2),
     "val_lr": [1e-4],
     "cpu": [True]
 }
