@@ -4,13 +4,12 @@ import time
 import dill
 import torch.nn as nn
 import torch.optim as optim
-from torch.utils.tensorboard import SummaryWriter
 import numpy as np
 from copy import deepcopy
 import gym
 from .models import *
 from .torch_utils import *
-from .steps import value_step, step_with_mode
+from .steps import value_step, step_with_mode, adv_normalize
 from .logging import *
 
 from multiprocessing import Process, Queue
@@ -69,7 +68,6 @@ class Trainer():
         self.advanced_logging = advanced_logging
         self.n_steps = 0
         self.log_every = log_every
-        self.summary_writer = SummaryWriter()
 
         # Instantiation
         self.policy_model = policy_net_class(self.NUM_FEATURES, self.NUM_ACTIONS,
@@ -126,6 +124,13 @@ class Trainer():
         })
 
         if self.advanced_logging:
+            self.store.add_table('normalized_advantage', {
+                'skewness':float,
+                'kurtosis':float,
+                'max': float,
+                'min': float,
+            })
+
             paper_constraint_cols = {
                 'avg_kl':float,
                 'max_ratio':float,
@@ -397,12 +402,24 @@ class Trainer():
             old_pds = select_prob_dists(out_train, detach=True)
             val_old_pds = select_prob_dists(out_val, detach=True)
 
-            self.summary_writer.add_histogram('advantages', saps.advantages,
-                    self.n_steps)
-            self.summary_writer.add_histogram('returns', saps.returns,
-                    self.n_steps)
-            self.summary_writer.add_histogram('values', saps.values,
-                    self.n_steps)
+            nadv = adv_normalize(saps.advantages)
+            nadv_skewness = torch.mean(nadv ** 3)
+            nadv_kurtosis = torch.mean(nadv ** 4)
+            self.store.log_table_and_tb('normalized_advantage', {
+                'skewness': nadv_skewness,
+                'kurtosis': nadv_kurtosis,
+                'max': torch.max(nadv),
+                'min': torch.min(nadv), 
+            })
+            self.store.tensorboard.add_histogram('normalized_advantages',
+                    nadv, self.n_steps)
+            # self.store.tensorboard.add_histogram('advantages',
+            #         saps.advantages, self.n_steps)
+            # self.store.tensorboard.add_histogram('returns', saps.returns,
+            #         self.n_steps)
+            # self.store.tensorboard.add_histogram('values', saps.values,
+            #         self.n_steps)
+            self.store['normalized_advantage'].flush_row()
         # End logging code
 
         # Update the value function before unrolling the trajectories
