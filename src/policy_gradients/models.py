@@ -180,19 +180,24 @@ class DiscPolicy(nn.Module):
         probs = F.softmax(self.final(x))
         return probs
 
-    def calc_kl(self, p, q, get_mean=True): # TODO: does not return a list
+    def calc_kl(self, p, q, get_mean=True):
         '''
         Calculates E KL(p||q):
         E[sum p(x) log(p(x)/q(x))]
         Inputs:
         - p, first probability distribution (NUM_SAMPLES, NUM_ACTIONS)
         - q, second probability distribution (NUM_SAMPLES, NUM_ACTIONS)
+        - get_mean, whether to return mean or a list
         Returns:
         - Empirical KL from p to q
         '''
+        print(get_mean)
         p, q = p.squeeze(), q.squeeze()
         assert shape_equal_cmp(p, q)
-        kl = (p * (ch.log(p) - ch.log(q))).sum(-1)
+        kl = (p * (ch.log(p + 1e-10) - ch.log(q + 1e-10))).sum(-1)
+        print(kl.shape)
+        if get_mean:
+            return kl.mean()
         return kl
 
     def entropies(self, p):
@@ -336,7 +341,7 @@ class CtsPolicy(nn.Module):
         except Exception as e:
             raise ValueError("Numerical error")
 
-    def calc_kl(self, p, q):
+    def calc_kl(self, p, q, get_mean=True):
         '''
         Get the expected KL distance between two sets of gaussians over states -
         gaussians p and q where p and q are each tuples (mean, var)
@@ -353,12 +358,14 @@ class CtsPolicy(nn.Module):
         detq = determinant(q_var)
         diff = q_mean - p_mean
 
-        log_quot_frac = ch.log(detq) - ch.log(detp)
-        tr = (p_var / q_var).sum()
-        quadratic = ((diff / q_var) * diff).sum(dim=1)
+        log_quot_frac = ch.log(detq + 1e-10) - ch.log(detp + 1e-10)
+        tr = (p_var / (q_var + 1e-10)).sum()
+        quadratic = ((diff / (q_var + 1e-10)) * diff).sum(dim=1)
 
         kl_sum = 0.5 * (log_quot_frac - d + tr + quadratic)
         assert kl_sum.shape == (p_mean.shape[0],)
+        if get_mean:
+            return kl_sum.mean()
         return kl_sum
 
     def entropies(self, p):

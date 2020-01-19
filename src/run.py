@@ -176,6 +176,10 @@ if __name__ == '__main__':
     parser.add_argument('--anneal-lr', type=bool,
                         help='if we should anneal lr linearly from start to finish')
     parser.add_argument('--clip-eps', type=float, help='ppo clipping')
+    parser.add_argument('--kl-penalty-direction', type=str, choices=['old_to_new',
+        'new_to_old'], help='ppo kl penalty direction')
+    parser.add_argument('--kl-penalty-coeff', type=float,
+            help='ppo kl penalty coeff')
     parser.add_argument('--entropy-coeff', type=float,
                         help='entropy weight hyperparam')
     parser.add_argument('--value-clipping', type=bool,
@@ -203,6 +207,7 @@ if __name__ == '__main__':
     parser.add_argument('--norm-states', type=bool, help='should norm states')
     parser.add_argument('--clip-rewards', type=float, help='clip rews eps')
     parser.add_argument('--clip-observations', type=float, help='clips obs eps')
+    parser.add_argument('--clip-advantages', type=float, help='clip adv eps')
 
     # Saving
     parser.add_argument('--save-iters', type=int, help='how often to save model (0 = no saving)')
