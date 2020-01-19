@@ -1,0 +1,1416 @@
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/e38014f0-eb95-40e8-b234-f4667a4fc0d0
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.751028 | mean episode length: 17.900901
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-18:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/01946a0f-3fa6-407d-bcb7-dfa818f4a0fe
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.468831 | mean episode length: 17.891892
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-19:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/ece32f1c-dd2f-4932-ac8b-0d4694213168
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.307137 | mean episode length: 17.750000
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-20:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/feb6be96-023d-43f8-adcf-c89d8c88e5cf
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.490325 | mean episode length: 17.900901
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-21:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/ccc5ef4b-1fe1-4f3a-89d9-204c50f208ef
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.595767 | mean episode length: 17.732143
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/b5efda21-3062-4667-a471-072c8a118ab2
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.286688 | mean episode length: 17.421053
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-11:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/2d5e5476-d053-461f-a348-8245b76c0cdc
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.755065 | mean episode length: 17.566372
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-10:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/b50145f3-b4fd-421d-8012-90fd306fb343
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.526879 | mean episode length: 17.741071
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-9:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/ef538170-fd44-4494-b3dc-6f0e772a6e1b
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.495866 | mean episode length: 17.900901
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-8:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/8b78f757-b407-4f8c-b11d-09567c42c6f5
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.629454 | mean episode length: 17.741071
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-14:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/bff6adb4-dce9-42ae-b0cf-2c6cc24710ea
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.533368 | mean episode length: 17.278261
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-12:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/d3346ca6-f5d7-4b24-8633-40ba19b5f7eb
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.150236 | mean episode length: 18.229358
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-16:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/bec10626-b10f-4b3b-be92-d424647a4232
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.497427 | mean episode length: 17.566372
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-13:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/6d42c807-2753-4706-a981-d4838d280ca7
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.435966 | mean episode length: 18.229358
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/7f9cc590-6b1a-4f89-9f68-8b8413586e7c
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.499911 | mean episode length: 18.063636
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-7:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/4c17b1ee-e66b-48d8-8565-6c4d94fd29db
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.648854 | mean episode length: 17.900901
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/c983de2d-b897-4021-b44f-a023629ad866
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.538642 | mean episode length: 18.211009
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-4:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/d2013960-2e18-4f94-8db9-3c7def2c4dc3
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.377297 | mean episode length: 17.741071
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-23:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/95ddd057-e178-4577-b42c-d8d8abbd1ded
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.793682 | mean episode length: 17.421053
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-24:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/bfd5143d-78d5-4ff9-ac58-12880917d071
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.438967 | mean episode length: 17.900901
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-5:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/18645c0f-a53b-40c7-af8f-5a77ba83e34c
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.592078 | mean episode length: 17.278261
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-22:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/67d5e871-b396-4cce-bd95-89d516b44772
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.604026 | mean episode length: 18.238532
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-17:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/1fbcdad8-53a2-4b83-9222-fa9c770b5190
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.492800 | mean episode length: 18.063636
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-6:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/bfd749d8-9317-4bdd-9e6c-181ffde89916
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.547777 | mean episode length: 17.882883
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-15:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/2a2a9200-5977-478d-8df0-63ec806fe9e8
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.350132 | mean episode length: 17.181034
+ERROR name 'kl' is not defined
+Process Process-9:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/3a6d2978-09fb-46b6-a9a5-4f46019776a1
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.393896 | mean episode length: 17.025641
+ERROR name 'kl' is not defined
+Process Process-24:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/a482ee4a-d81c-4cbc-b6af-daf966c43bd4
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.204451 | mean episode length: 17.321739
+ERROR name 'kl' is not defined
+Process Process-21:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/8bb1c8f7-ee4e-4d42-9359-25d9781359cb
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.430744 | mean episode length: 16.872881
+ERROR name 'kl' is not defined
+Process Process-16:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/44ec9d25-5c42-4324-85be-b7c3d1d7f6e4
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: 0.034066 | mean episode length: 17.008547
+ERROR name 'kl' is not defined
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/dd84c31d-bccd-4258-a91e-0a32ebe983d0
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.506431 | mean episode length: 17.042735
+ERROR name 'kl' is not defined
+Process Process-19:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/66e58738-db55-45fc-a862-f64a8fdbe197
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.475047 | mean episode length: 17.042735
+ERROR name 'kl' is not defined
+Process Process-11:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/0f3f6bcb-2ba8-41ec-91ba-446e323b64da
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.395955 | mean episode length: 16.747899
+ERROR name 'kl' is not defined
+Process Process-13:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/492840cd-1326-4fca-bd7a-9efec76fb7c4
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.420934 | mean episode length: 17.025641
+ERROR name 'kl' is not defined
+Process Process-22:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/022b3141-94f3-4783-8ba3-11fe30500e94
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.303494 | mean episode length: 17.025641
+ERROR name 'kl' is not defined
+Process Process-5:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/d0c7f42c-b2cc-493c-a3d0-2733b0ad36de
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.407257 | mean episode length: 16.872881
+ERROR name 'kl' is not defined
+Process Process-17:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/b1909701-120b-4dc5-a715-3ff06cea8402
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.335495 | mean episode length: 17.025641
+ERROR name 'kl' is not defined
+Process Process-20:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/fc631d1d-909b-41ce-a1f8-a3474c03da89
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.284535 | mean episode length: 17.181034
+ERROR name 'kl' is not defined
+Process Process-23:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/4b8678fa-0c04-4426-bdda-99ccb327536f
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.542361 | mean episode length: 16.739496
+ERROR name 'kl' is not defined
+Process Process-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/fbe57f00-1d71-4943-a6e7-17e9531adbe2
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.200860 | mean episode length: 16.881356
+ERROR name 'kl' is not defined
+Process Process-7:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/a9d777b6-24a0-4b39-b2f0-9ef7c4096bc7
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.521657 | mean episode length: 16.600000
+ERROR name 'kl' is not defined
+Process Process-6:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/e9abdc50-32ef-4296-9477-c8a3a97a8bd0
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.416715 | mean episode length: 16.898305
+ERROR name 'kl' is not defined
+Process Process-12:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/08f85a77-1a1c-40ff-aab5-a268ecd1e6c9
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.297224 | mean episode length: 17.181034
+ERROR name 'kl' is not defined
+Process Process-4:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/4392d70b-1016-469e-97b2-904bcb13f81c
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.234878 | mean episode length: 17.034188
+ERROR name 'kl' is not defined
+Process Process-18:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/05523d5c-2d41-497c-a71f-263b474489a4
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.248852 | mean episode length: 16.881356
+ERROR name 'kl' is not defined
+Process Process-10:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/ef0e96e7-66ea-4da0-bd47-db2a06d0171a
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.032587 | mean episode length: 17.172414
+ERROR name 'kl' is not defined
+Process Process-14:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/72af7194-d307-4be3-8f05-8e09036e3602
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.256518 | mean episode length: 17.017094
+ERROR name 'kl' is not defined
+Process Process-15:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/e57a54a0-5990-44d3-8549-0225c4774f9f
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.431831 | mean episode length: 17.025641
+ERROR name 'kl' is not defined
+Process Process-8:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/b69cbcb5-e49a-4827-943a-68bd2c086f15
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.105375 | mean episode length: 16.881356
+ERROR name 'kl' is not defined
+Process Process-3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 293, in ppo_step
+    batch_old_log_ps, dist, batch_old_pds, net, params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 241, in calculate_ppo_surrogate_loss
+    kl_penalty = net.calc_kl(batch_old_pds, new_pds)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/models.py", line 368, in calc_kl
+    return kl.mean()
+NameError: name 'kl' is not defined

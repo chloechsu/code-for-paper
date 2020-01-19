@@ -125,14 +125,16 @@ class Trainer():
 
         if self.advanced_logging:
             self.store.add_table('normalized_advantage', {
+                'opt_step':int,
                 'skewness':float,
                 'kurtosis':float,
                 'max': float,
-                'min': float,
+                'min': float
             })
 
             paper_constraint_cols = {
-                'avg_kl':float,
+                'avg_kl_old_to_new':float,
+                'avg_kl_new_to_old':float,
                 'max_ratio':float,
                 'opt_step':int
             }
@@ -410,9 +412,10 @@ class Trainer():
                 'kurtosis': nadv_kurtosis,
                 'max': torch.max(nadv),
                 'min': torch.min(nadv), 
+                'opt_step':self.n_steps,
             })
-            self.store.tensorboard.add_histogram('normalized_advantages',
-                    nadv, self.n_steps)
+            # self.store.tensorboard.add_histogram('normalized_advantages',
+            #         nadv, self.n_steps)
             # self.store.tensorboard.add_histogram('advantages',
             #         saps.advantages, self.n_steps)
             # self.store.tensorboard.add_histogram('returns', saps.returns,

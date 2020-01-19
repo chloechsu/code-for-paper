@@ -19,11 +19,12 @@ def paper_constraints_logging(agent, saps, old_pds, table):
     ratios = ch.exp(new_log_ps - saps.action_log_probs)
     max_rat = ratios.max()
 
-    kls = agent.policy_model.calc_kl(old_pds, new_pds)
-    avg_kl = kls.mean()
+    avg_kl_old_to_new = agent.policy_model.calc_kl(old_pds, new_pds)
+    avg_kl_new_to_old = agent.policy_model.calc_kl(new_pds, old_pds)
 
     row = {
-        'avg_kl':avg_kl,
+        'avg_kl_old_to_new':avg_kl_old_to_new,
+        'avg_kl_new_to_old':avg_kl_new_to_old,
         'max_ratio':max_rat,
         'opt_step':agent.n_steps,
     }
