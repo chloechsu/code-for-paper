@@ -368,8 +368,8 @@ class Trainer():
 
             # Logging
             if should_log:
-                msg = "Current mean reward: %f | mean episode length: %f"
-                print(msg % (avg_ep_reward, avg_ep_length))
+                # msg = "Current mean reward: %f | mean episode length: %f"
+                # print(msg % (avg_ep_reward, avg_ep_length))
                 self.store.log_table_and_tb('optimization', {
                     'mean_reward': avg_ep_reward
                 })
@@ -478,7 +478,7 @@ class Trainer():
         Returns: 
         - The current reward from the policy (per actor)
         '''
-        print("-" * 80)
+        # print("-" * 80)
         start_time = time.time()
 
         num_saps = self.T * self.NUM_ACTORS
@@ -486,12 +486,12 @@ class Trainer():
         surr_loss, val_loss = self.take_steps(saps)
 
         # Logging code
-        print("Surrogate Loss:", surr_loss.item(), 
-                        "| Value Loss:", val_loss.item())
-        print("Time elapsed (s):", time.time() - start_time)
+        # print("Surrogate Loss:", surr_loss.item(), 
+        #                 "| Value Loss:", val_loss.item())
+        # print("Time elapsed (s):", time.time() - start_time)
         if not self.policy_model.discrete:
             mean_std = ch.exp(self.policy_model.log_stdev).mean()
-            print("Agent stdevs: %s" % mean_std)
+            # print("Agent stdevs: %s" % mean_std)
             self.store.log_table_and_tb('optimization', {
                 'mean_std': mean_std
             })
