@@ -1,0 +1,1464 @@
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/8c9c1fc4-e496-4ea6-94ab-374ee672b665
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.251827 | mean episode length: 17.447368
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-24:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/7e1b817f-39da-4fbf-a913-26c996433b26
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.449511 | mean episode length: 17.535088
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-9:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/8a5446e3-287c-417c-a53c-a14042bace78
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.365255 | mean episode length: 17.601770
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/14eb545f-1036-47b5-a5cc-ff3c44783510
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.249062 | mean episode length: 17.918919
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-11:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/d8e3efbb-7c25-456a-8985-6a93d666e555
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.288323 | mean episode length: 17.447368
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-23:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/ac996916-ac6f-4742-9c8d-6c0eb1e6e368
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.107885 | mean episode length: 17.767857
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/a52f54c8-08b4-477d-a27d-2483837d3106
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.394143 | mean episode length: 17.447368
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-7:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/eecb293c-3364-46ab-b348-28a259c3f8e5
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.481726 | mean episode length: 17.295652
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-16:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/84a886cb-9b1f-41e8-8e19-99eb01c02b89
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.191250 | mean episode length: 17.304348
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/5b6948ca-0d67-4fdc-a05e-6e0d3df4efcb
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.367925 | mean episode length: 17.456140
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-10:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/f70f5973-d026-45fb-a8d6-cd2f31f5725a
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.315516 | mean episode length: 17.758929
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-20:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/2f77d770-0bfa-4a01-8b95-657e4e3f3908
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.211708 | mean episode length: 17.918919
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-15:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/657be3d9-4ab0-4bd3-98bd-539b4b0619d5
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.236599 | mean episode length: 17.232759
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-6:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/c96be5b0-d589-4d93-9eb1-76c56dbaeec3
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.507436 | mean episode length: 17.295652
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-8:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/f1cc8f54-fc81-4b67-a0d8-967f74d742c2
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.173101 | mean episode length: 17.767857
+ERROR grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/8385886a-d87c-4a50-9437-0c87c8078324
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.158891 | mean episode length: 17.758929
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-13:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Process Process-18:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/bf1b6b8e-4af5-4fc4-ab6c-e3b5abd1b519
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.569144 | mean episode length: 17.535088
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-14:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/6718a15b-4551-4f08-935e-71c53ac984e7
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.127814 | mean episode length: 17.601770
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-22:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/79f89ed4-3b53-4dc0-b51b-765b1f13c6b1
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.906426 | mean episode length: 17.146552
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-12:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/047a59e0-f471-4682-9d82-66fbe2f88d15
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.410700 | mean episode length: 17.758929
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-4:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/a904e694-c5bd-4377-b6ab-b412f810b5b1
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.378757 | mean episode length: 17.758929
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-21:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/c4d8dbe4-1a3c-4982-8c12-d06873bb1863
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.197893 | mean episode length: 17.601770
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-5:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/ded3ac74-54d2-4638-b6e3-53225ae72188
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.180641 | mean episode length: 17.447368
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-17:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/8c5e298d-d00c-46f3-84ac-60159e60ba79
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -1.284313 | mean episode length: 17.146552
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-19:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 324, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/0cc15077-b20e-4a0f-a87b-b0dbffcc01cf
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.202391 | mean episode length: 18.635514
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-7:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/3ccc0baa-5aea-4a64-b510-f0cb9a9ecb6b
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.354344 | mean episode length: 18.801887
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-21:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/019787b3-1f8e-45e6-8f47-b138c6461306
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.132439 | mean episode length: 18.453704
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-20:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/bf5f815f-c917-430c-b273-9e9c915e7630
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.412365 | mean episode length: 18.284404
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-12:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/88fffe02-cda9-4884-8c58-36869ef30b85
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: 0.006193 | mean episode length: 18.635514
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-18:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/86be66b3-f5f0-4615-ae5f-616c4a434775
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.519320 | mean episode length: 18.398148
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-24:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/78aee73f-d86b-4c5b-9ff7-fac31c9211d3
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.394746 | mean episode length: 18.579439
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-16:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/2d31c7bd-666f-471f-b6ba-4589d429f805
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.046673 | mean episode length: 19.105769
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-17:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/8c55ce64-3744-4369-98c0-364fc6bc8a4b
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.241439 | mean episode length: 18.626168
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-22:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/63ef7cf1-019b-450e-b9f4-16e0f7d13951
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.467680 | mean episode length: 18.453704
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-9:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/80b6cc72-58a7-4bb9-aaa7-5ecce6bce440
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.155026 | mean episode length: 19.349515
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-19:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/74d993ec-6916-4ae6-aab5-d6b6973053ab
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.322076 | mean episode length: 18.923810
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-13:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/addfdb02-4363-4155-9f19-1a6b22672cfc
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.492188 | mean episode length: 18.626168
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-10:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/58b15ad6-692d-43e7-8d8a-5fccada5ab83
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.367334 | mean episode length: 18.453704
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-11:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/6d35eb02-27da-46c5-88e4-dbcc9134b65c
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.602272 | mean episode length: 18.407407
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-5:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/12847968-80c9-40be-900a-35afb9e2bbff
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.271328 | mean episode length: 18.626168
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-6:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/968b7a13-caab-42fe-bd70-d5cbe567b3c1
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.471893 | mean episode length: 18.570093
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/a53193c1-d15e-483e-ba1f-962368243347
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.381384 | mean episode length: 18.745283
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-15:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/4775e0ba-5016-4782-b6da-1ae93888c056
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.719571 | mean episode length: 18.570093
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-23:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/f71c9278-4c88-494f-aef7-32b255c158a4
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.204571 | mean episode length: 18.453704
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-8:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/f4260b63-b071-485f-be55-1c21ee52ec54
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.387764 | mean episode length: 18.626168
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/4a04f0be-e1ab-4c83-89f5-6554f09f7dc5
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.098244 | mean episode length: 18.801887
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-4:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/0c9c06d6-6898-484a-9941-f790705904d4
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.302407 | mean episode length: 18.801887
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-14:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/kl_and_clip_experiment/agents/a4e7e63a-b1f9-4e0f-8fdf-8b18346144d1
+Step 0
+--------------------------------------------------------------------------------
+Current mean reward: -0.113399 | mean episode length: 18.801887
+#### torch.Size([]) torch.Size([63])
+ERROR grad can be implicitly created only for scalar outputs
+Process Process-3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 486, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 451, in take_steps
+    surr_loss = self.policy_step(*args).mean()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/steps.py", line 325, in ppo_step
+    loss.backward()
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/tensor.py", line 166, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 93, in backward
+    grad_tensors = _make_grads(tensors, grad_tensors)
+  File "/home/eecs/chloehsu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 34, in _make_grads
+    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+RuntimeError: grad can be implicitly created only for scalar outputs
