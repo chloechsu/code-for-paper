@@ -354,12 +354,13 @@ class CtsPolicy(nn.Module):
         assert shape_equal([self.action_dim], p_var, q_var)
 
         d = q_mean.shape[1]
-        detp = determinant(p_var)
-        detq = determinant(q_var)
+        # Add 1e-10 to variances to avoid nans.
+        logdetp = log_determinant(p_var + 1e-10)
+        logdetq = log_determinant(q_var + 1e-10)
         diff = q_mean - p_mean
 
-        log_quot_frac = ch.log(detq + 1e-10) - ch.log(detp + 1e-10)
-        tr = (p_var / (q_var + 1e-10)).sum()
+        log_quot_frac = logdetq - logdetp
+        tr = ((p_var + 1e-10) / (q_var + 1e-10)).sum()
         quadratic = ((diff / (q_var + 1e-10)) * diff).sum(dim=1)
 
         kl_sum = 0.5 * (log_quot_frac - d + tr + quadratic)
@@ -375,9 +376,10 @@ class CtsPolicy(nn.Module):
         p var is shape (action_space,)
         '''
         _, var = p
-        detp = determinant(var)
+        # Add 1e-10 to variance to avoid nans.
+        logdetp = log_determinant(var + 1e-10)
         d = var.shape[0]
-        entropies = 0.5 * (ch.log(detp) + d * (1. + math.log(2 * math.pi)))
+        entropies = 0.5 * (logdetp + d * (1. + math.log(2 * math.pi)))
         return entropies
 
 ## Retrieving networks

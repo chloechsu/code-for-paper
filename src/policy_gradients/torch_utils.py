@@ -132,6 +132,16 @@ def determinant(mat):
     '''
     return ch.exp(ch.log(mat).sum())
 
+def log_determinant(mat):
+    '''
+    Returns the log determinant of a diagonal matrix
+    Inputs:
+    - mat, a diagonal matrix
+    Returns:
+    - The log determinant of mat, aka sum of the log diagonal
+    '''
+    return ch.log(mat).sum()
+
 def safe_op_or_neg_one(maybe_empty, op):
     '''
     Performs an operation on a tensor which may be empty.
