@@ -111,6 +111,9 @@ class Trainer():
             self.params.POLICY_SCHEDULER = ps
             self.params.VALUE_SCHEDULER = vs
 
+        # Initialize kl penalty coeff, whether annealing or not.
+        self.params.KL_PENALTY_COEFF_EFFECTIVE = self.params.KL_PENALTY_COEFF
+
         if store is not None:
             self.setup_stores(store)
 
@@ -455,6 +458,10 @@ class Trainer():
         if self.ANNEAL_LR:
             self.POLICY_SCHEDULER.step()
             self.VALUE_SCHEDULER.step()
+
+        if self.ANNEAL_KL_PENALTY_COEFF:
+            self.params.KL_PENALTY_COEFF_EFFECTIVE -= (
+                    self.params.KL_PENALTY_COEFF / self.TRAIN_STEPS)
 
         if should_adv_log:
             paper_constraints_logging(self, saps, old_pds,

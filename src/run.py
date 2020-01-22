@@ -105,7 +105,7 @@ def main(params):
     # Try-except so that we save if the user interrupts the process
     try:
         for i in range(params['train_steps']):
-            print('Step %d' % (i,))
+            # print('Step %d' % (i,))
             if params['save_iters'] > 0 and i % params['save_iters'] == 0:
                 store['checkpoints'].append_row({
                     'iteration':i,
@@ -180,6 +180,8 @@ if __name__ == '__main__':
         'new_to_old'], help='ppo kl penalty direction')
     parser.add_argument('--kl-penalty-coeff', type=float,
             help='ppo kl penalty coeff')
+    parser.add_argument('--anneal-kl-penalty-coeff', type=bool,
+            help='anneal ppo kl penalty coeff linearly from start to finish')
     parser.add_argument('--entropy-coeff', type=float,
                         help='entropy weight hyperparam')
     parser.add_argument('--value-clipping', type=bool,

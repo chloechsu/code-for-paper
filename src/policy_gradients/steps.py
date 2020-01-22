@@ -268,7 +268,7 @@ def ppo_step(all_states, actions, old_log_ps, rewards, returns, not_dones,
                 kl_penalty = net.calc_kl(batch_old_pds, dist)
             else:
                 kl_penalty = net.calc_kl(dist, batch_old_pds)
-            kl_penalty *= params.KL_PENALTY_COEFF
+            kl_penalty *= params.KL_PENALTY_COEFF_EFFECTIVE
 
             # Calculate entropy bonus
             entropy_bonus = net.entropies(dist).mean()
