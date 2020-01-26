@@ -30,17 +30,18 @@ def adv_normalize(adv):
     n_advs = (adv - adv.mean())/(adv.std()+1e-8)
     return n_advs
 
-def surrogate_reward(adv, *, new, old, clip_eps=None):
+def surrogate_reward(adv, *, new, old, clip_eps=None, clip_adv=None):
     '''
     Computes the surrogate reward for TRPO and PPO:
     R(\theta) = E[r_t * A_t]
-    with support for clamping the ratio (for PPO), s.t.
-    R(\theta) = E[clamp(r_t, 1-e, 1+e) * A_t]
+    with support for clamping the ratio (for PPO) and normalized adv, s.t.
+    R(\theta) = E[clamp(r_t, 1-e, 1+e) * clamp(A_t, -a, a)]
     Inputs:
     - adv, unnormalized advantages as calculated by the agents
     - log_ps_new, the log probabilities assigned to taken events by \theta_{new}
     - log_ps_old, the log probabilities assigned to taken events by \theta_{old}
     - clip_EPS, the clipping boundary for PPO loss
+    - clip_adv, the clipping bondary for normalized advantages
     Returns:
     - The surrogate loss as described above
     '''
@@ -48,6 +49,10 @@ def surrogate_reward(adv, *, new, old, clip_eps=None):
 
     # Normalized Advantages
     n_advs = adv_normalize(adv)
+
+    # Clip advantages
+    if clip_adv is not None:
+        n_advs = ch.clamp(n_advs, -clip_adv, clip_adv)
 
     assert shape_equal_cmp(log_ps_new, log_ps_old, n_advs)
 
@@ -206,13 +211,11 @@ def value_step(all_states, returns, advantages, not_dones, net,
             val_loss.backward()
             val_opt.step()
 
-
-
-
     return val_loss
 
+
 def ppo_step(all_states, actions, old_log_ps, rewards, returns, not_dones, 
-                advs, net, params, store, opt_step):
+                advs, net, params, store, opt_step, opposite_kl=False):
     '''
     Proximal Policy Optimization
     Runs K epochs of PPO as in https://arxiv.org/abs/1707.06347
@@ -239,12 +242,14 @@ def ppo_step(all_states, actions, old_log_ps, rewards, returns, not_dones,
         state_indices = np.arange(all_states.shape[0])
         np.random.shuffle(state_indices)
         splits = np.array_split(state_indices, params.NUM_MINIBATCHES)
+        old_pds = select_prob_dists(net(all_states), detach=True)
         for selected in splits:
             def sel(*args):
                 return [v[selected] for v in args]
 
             tup = sel(all_states, actions, old_log_ps, advs)
             batch_states, batch_actions, batch_old_log_ps, batch_advs = tup
+            batch_old_pds = select_prob_dists(old_pds, selected)
 
             dist = net(batch_states)
             new_log_ps = net.get_loglikelihood(dist, batch_actions)
@@ -252,17 +257,25 @@ def ppo_step(all_states, actions, old_log_ps, rewards, returns, not_dones,
             shape_equal_cmp(new_log_ps, batch_old_log_ps)
 
             # Calculate rewards
-            unclp_rew = surrogate_reward(batch_advs, new=new_log_ps, old=batch_old_log_ps)
-            clp_rew = surrogate_reward(batch_advs, new=new_log_ps, old=batch_old_log_ps,
-                                       clip_eps=params.CLIP_EPS)
+            unclp_rew = surrogate_reward(batch_advs, new=new_log_ps,
+                    old=batch_old_log_ps, clip_adv=params.CLIP_ADVANTAGES)
+            clp_rew = surrogate_reward(batch_advs, new=new_log_ps,
+                        old=batch_old_log_ps, clip_eps=params.CLIP_EPS,
+                        clip_adv=params.CLIP_ADVANTAGES)
+            surrogate = -ch.min(unclp_rew, clp_rew).mean()
+
+            if params.KL_PENALTY_DIRECTION == 'old_to_new':
+                kl_penalty = net.calc_kl(batch_old_pds, dist)
+            else:
+                kl_penalty = net.calc_kl(dist, batch_old_pds)
+            kl_penalty *= params.KL_PENALTY_COEFF_EFFECTIVE
 
             # Calculate entropy bonus
             entropy_bonus = net.entropies(dist).mean()
+            entropy = -params.ENTROPY_COEFF * entropy_bonus
 
             # Total loss
-            surrogate = -ch.min(unclp_rew, clp_rew).mean()
-            entropy = -params.ENTROPY_COEFF * entropy_bonus
-            loss = surrogate + entropy
+            loss = surrogate + entropy + kl_penalty
             
             # If we are sharing weights, take the value step simultaneously 
             # (since the policy and value networks depend on the same weights)

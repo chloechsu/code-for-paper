@@ -9,7 +9,7 @@ from copy import deepcopy
 import gym
 from .models import *
 from .torch_utils import *
-from .steps import value_step, step_with_mode
+from .steps import value_step, step_with_mode, adv_normalize
 from .logging import *
 
 from multiprocessing import Process, Queue
@@ -111,6 +111,9 @@ class Trainer():
             self.params.POLICY_SCHEDULER = ps
             self.params.VALUE_SCHEDULER = vs
 
+        # Initialize kl penalty coeff, whether annealing or not.
+        self.params.KL_PENALTY_COEFF_EFFECTIVE = self.params.KL_PENALTY_COEFF
+
         if store is not None:
             self.setup_stores(store)
 
@@ -124,8 +127,17 @@ class Trainer():
         })
 
         if self.advanced_logging:
+            self.store.add_table('normalized_advantage', {
+                'opt_step':int,
+                'skewness':float,
+                'kurtosis':float,
+                'max': float,
+                'min': float
+            })
+
             paper_constraint_cols = {
-                'avg_kl':float,
+                'avg_kl_old_to_new':float,
+                'avg_kl_new_to_old':float,
                 'max_ratio':float,
                 'opt_step':int
             }
@@ -359,8 +371,8 @@ class Trainer():
 
             # Logging
             if should_log:
-                msg = "Current mean reward: %f | mean episode length: %f"
-                print(msg % (avg_ep_reward, avg_ep_length))
+                # msg = "Current mean reward: %f | mean episode length: %f"
+                # print(msg % (avg_ep_reward, avg_ep_length))
                 self.store.log_table_and_tb('optimization', {
                     'mean_reward': avg_ep_reward
                 })
@@ -394,6 +406,26 @@ class Trainer():
 
             old_pds = select_prob_dists(out_train, detach=True)
             val_old_pds = select_prob_dists(out_val, detach=True)
+
+            nadv = adv_normalize(saps.advantages)
+            nadv_skewness = torch.mean(nadv ** 3)
+            nadv_kurtosis = torch.mean(nadv ** 4)
+            self.store.log_table_and_tb('normalized_advantage', {
+                'skewness': nadv_skewness,
+                'kurtosis': nadv_kurtosis,
+                'max': torch.max(nadv),
+                'min': torch.min(nadv), 
+                'opt_step':self.n_steps,
+            })
+            # self.store.tensorboard.add_histogram('normalized_advantages',
+            #         nadv, self.n_steps)
+            # self.store.tensorboard.add_histogram('advantages',
+            #         saps.advantages, self.n_steps)
+            # self.store.tensorboard.add_histogram('returns', saps.returns,
+            #         self.n_steps)
+            # self.store.tensorboard.add_histogram('values', saps.values,
+            #         self.n_steps)
+            self.store['normalized_advantage'].flush_row()
         # End logging code
 
         # Update the value function before unrolling the trajectories
@@ -427,6 +459,10 @@ class Trainer():
             self.POLICY_SCHEDULER.step()
             self.VALUE_SCHEDULER.step()
 
+        if self.ANNEAL_KL_PENALTY_COEFF:
+            self.params.KL_PENALTY_COEFF_EFFECTIVE -= (
+                    self.params.KL_PENALTY_COEFF / self.TRAIN_STEPS)
+
         if should_adv_log:
             paper_constraints_logging(self, saps, old_pds,
                             table='paper_constraints_train')
@@ -449,7 +485,7 @@ class Trainer():
         Returns: 
         - The current reward from the policy (per actor)
         '''
-        print("-" * 80)
+        # print("-" * 80)
         start_time = time.time()
 
         num_saps = self.T * self.NUM_ACTORS
@@ -457,12 +493,12 @@ class Trainer():
         surr_loss, val_loss = self.take_steps(saps)
 
         # Logging code
-        print("Surrogate Loss:", surr_loss.item(), 
-                        "| Value Loss:", val_loss.item())
-        print("Time elapsed (s):", time.time() - start_time)
+        # print("Surrogate Loss:", surr_loss.item(), 
+        #                 "| Value Loss:", val_loss.item())
+        # print("Time elapsed (s):", time.time() - start_time)
         if not self.policy_model.discrete:
             mean_std = ch.exp(self.policy_model.log_stdev).mean()
-            print("Agent stdevs: %s" % mean_std)
+            # print("Agent stdevs: %s" % mean_std)
             self.store.log_table_and_tb('optimization', {
                 'mean_std': mean_std
             })
