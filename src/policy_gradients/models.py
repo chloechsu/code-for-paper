@@ -334,7 +334,7 @@ class CtsPolicy(nn.Module):
     def get_loglikelihood(self, p, actions):
         try:    
             mean, std = p
-            nll =  0.5 * ((actions - mean).pow(2) / std).sum(-1) \
+            nll =  0.5 * ((actions - mean).pow(2) / std.pow(2)).sum(-1) \
                    + 0.5 * np.log(2.0 * np.pi) * actions.shape[-1] \
                    + self.log_stdev.sum(-1)
             return -nll
@@ -348,20 +348,22 @@ class CtsPolicy(nn.Module):
         - In other words calculates E KL(p||q): E[sum p(x) log(p(x)/q(x))]
         - From https://stats.stackexchange.com/a/60699
         '''
-        p_mean, p_var = p
-        q_mean, q_var = q
+        p_mean, p_std = p
+        q_mean, q_std = q
+        p_var = p_std.pow(2) + 1e-10
+        q_var = q_std.pow(2) + 1e-10
         assert shape_equal([-1, self.action_dim], p_mean, q_mean)
         assert shape_equal([self.action_dim], p_var, q_var)
 
         d = q_mean.shape[1]
         # Add 1e-10 to variances to avoid nans.
-        logdetp = log_determinant(p_var + 1e-10)
-        logdetq = log_determinant(q_var + 1e-10)
+        logdetp = log_determinant(p_var)
+        logdetq = log_determinant(q_var)
         diff = q_mean - p_mean
 
         log_quot_frac = logdetq - logdetp
-        tr = ((p_var + 1e-10) / (q_var + 1e-10)).sum()
-        quadratic = ((diff / (q_var + 1e-10)) * diff).sum(dim=1)
+        tr = (p_var / q_var).sum()
+        quadratic = ((diff / q_var) * diff).sum(dim=1)
 
         kl_sum = 0.5 * (log_quot_frac - d + tr + quadratic)
         assert kl_sum.shape == (p_mean.shape[0],)
@@ -375,9 +377,10 @@ class CtsPolicy(nn.Module):
         p_i = (mean, var), p mean is shape (batch_size, action_space),
         p var is shape (action_space,)
         '''
-        _, var = p
+        _, std = p
+        var = std.pow(2) + 1e-10
         # Add 1e-10 to variance to avoid nans.
-        logdetp = log_determinant(var + 1e-10)
+        logdetp = log_determinant(var)
         d = var.shape[0]
         entropies = 0.5 * (logdetp + d * (1. + math.log(2 * math.pi)))
         return entropies

@@ -215,7 +215,7 @@ def value_step(all_states, returns, advantages, not_dones, net,
 
 
 def ppo_step(all_states, actions, old_log_ps, rewards, returns, not_dones, 
-                advs, net, params, store, opt_step, opposite_kl=False):
+                advs, net, params, store, opt_step):
     '''
     Proximal Policy Optimization
     Runs K epochs of PPO as in https://arxiv.org/abs/1707.06347

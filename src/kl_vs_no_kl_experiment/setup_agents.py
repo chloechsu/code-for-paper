@@ -9,7 +9,6 @@ with open("../MuJoCo.json") as f:
     BASE_CONFIG = json.load(f)
 
 PARAMS = {
-    # "game": ["Humanoid-v2"],
     "game": ["Walker2d-v2", "Humanoid-v2", "Swimmer-v2", "Hopper-v2",
         "HalfCheetah-v2", "InvertedPendulum-v2", "Reacher-v2",
         "InvertedDoublePendulum-v2"],
@@ -17,7 +16,7 @@ PARAMS = {
     "clip_eps": [0.2],
     "kl_penalty_coeff": [0, 3],
     "ppo_lr_adam": [3e-4] * 20,
-    "kl_penalty_direction": ["old_to_new"],
+    "kl_penalty_direction": ["new_to_old"],
     "out_dir": ["kl_vs_no_kl_experiment/agents"],
     "norm_rewards": ["returns"],
     "initialization": ["orthogonal"],
