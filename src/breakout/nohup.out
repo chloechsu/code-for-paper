@@ -1,0 +1,600 @@
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/dfc90aa4-ce7c-421b-8a47-dfd3a9494dbe
+ERROR 
+Process Process-4:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/918258ab-6b27-4fde-8fcf-624e09c6e3a1
+ERROR 
+Process Process-24:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/11a8d801-1e62-49a9-ba24-8c4bdf877441
+ERROR 
+Process Process-5:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/87775be0-e10f-4601-afe3-f8f1a9f6e162
+ERROR 
+Process Process-14:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/858ab088-92b0-4a9b-b940-38965ab943af
+ERROR 
+Process Process-12:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/3ddc77d3-6534-4e30-9e1b-fd42a3ea64cf
+ERROR 
+Process Process-22:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/55109b58-e6b3-4e79-8c76-f2ae8eabbd64
+ERROR 
+Process Process-15:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/651687cb-ea99-4d61-b780-2819d0a2b318
+ERROR 
+Process Process-19:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/382ef7ef-c390-416f-be4f-62d81247f288
+ERROR 
+Process Process-11:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/2dcc3cff-2f82-4fc3-a69f-56076eac963f
+ERROR 
+Process Process-9:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/b7d3eb19-ee6e-47b6-9156-15e4ff88ec5d
+ERROR 
+Process Process-3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/64737082-107d-4604-8151-c790c38e0190
+ERROR 
+Process Process-21:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/f988cc19-5407-4fb8-85d5-5affccacef4a
+ERROR 
+Process Process-7:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/72b56822-53b0-48f1-9a37-978ebb05d491
+ERROR 
+Process Process-10:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/a953d4d7-ec85-4ce8-a111-2a2614975ccb
+ERROR 
+Process Process-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/bb909be2-1dcb-4098-9e09-06b37a3d1b46
+ERROR 
+Process Process-8:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/943a5755-4419-4107-87fd-82612bdf14eb
+ERROR 
+Process Process-13:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/7e185ba7-18a6-41e0-8bcb-86ad096eed69
+ERROR 
+Process Process-17:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/bede91ab-b5f1-41de-bd45-eedc735295a2
+ERROR 
+Process Process-20:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/07fee67a-d0ba-4d22-9a55-236116501b16
+ERROR 
+Process Process-18:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/d35ae179-1a6d-481a-812f-8b592491c6eb
+ERROR 
+Process Process-23:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/51725561-c660-450a-82b5-514d0d075350
+ERROR 
+Process Process-16:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/beb3aa3e-05f8-4c12-a22b-14dfd24da20f
+ERROR 
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/breakout/agents/6f240087-4dd1-47c9-96d4-05533ddf1203
+ERROR 
+Process Process-6:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 87, in main
+    p = Trainer.agent_from_params(params, store=store)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 596, in agent_from_params
+    advanced_logging=advanced_logging)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in __init__
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 62, in <listcomp>
+    self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 60, in env_constructor
+    clip_rew=self.CLIP_REWARDS)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/custom_env.py", line 35, in __init__
+    assert len(self.env.observation_space.shape) == 1
+AssertionError

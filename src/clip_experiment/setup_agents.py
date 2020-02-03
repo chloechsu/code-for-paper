@@ -16,7 +16,7 @@ PARAMS = {
     "mode": ["ppo"],
     "clip_eps": [0.2],
     "kl_penalty_coeff": [0],
-    "ppo_lr_adam": [3e-4] * 20,
+    "ppo_lr_adam": [3e-4] * 10,
     "kl_penalty_direction": ["new_to_old"],
     "out_dir": ["clip_experiment/agents"],
     "norm_rewards": ["returns"],
@@ -27,7 +27,7 @@ PARAMS = {
     # "ppo_lr_adam": iwt(1e-5, 2.9e-4, 7e-5, 5),
     "val_lr": [2e-5],
     "cpu": [True],
-    "advanced_logging": [False],
+    "advanced_logging": [True],
 }
 
 all_configs = [{**BASE_CONFIG, **p} for p in dict_product(PARAMS)]

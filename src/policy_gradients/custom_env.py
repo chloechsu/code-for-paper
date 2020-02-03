@@ -32,8 +32,10 @@ class Env:
                             if len(action_shape) == 0 else action_shape[0]
         
         # Number of features
-        assert len(self.env.observation_space.shape) == 1
-        self.num_features = self.env.reset().shape[0]
+        # assert len(self.env.observation_space.shape) == 1
+        print(self.env.observation_space.shape)
+        self.num_features = self.env.reset().flatten().shape[0]
+        print(self.num_features)
 
         # Support for state normalization or using time as a feature
         self.state_filter = Identity()
@@ -63,6 +65,7 @@ class Env:
 
     def step(self, action):
         state, reward, is_done, info = self.env.step(action)
+        print(state.shape())
         state = self.state_filter(state)
         self.total_true_reward += reward
         self.counter += 1

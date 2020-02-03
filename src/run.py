@@ -182,6 +182,8 @@ if __name__ == '__main__':
             help='ppo kl penalty coeff')
     parser.add_argument('--anneal-kl-penalty-coeff', type=bool,
             help='anneal ppo kl penalty coeff linearly from start to finish')
+    parser.add_argument('--anneal-clip-eps', type=bool,
+            help='anneal ppo clip coeff linearly from start to finish')
     parser.add_argument('--entropy-coeff', type=float,
                         help='entropy weight hyperparam')
     parser.add_argument('--value-clipping', type=bool,

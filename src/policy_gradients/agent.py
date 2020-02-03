@@ -417,8 +417,8 @@ class Trainer():
                 'min': torch.min(nadv), 
                 'opt_step':self.n_steps,
             })
-            # self.store.tensorboard.add_histogram('normalized_advantages',
-            #         nadv, self.n_steps)
+            self.store.tensorboard.add_histogram('normalized_advantages',
+                    nadv, self.n_steps)
             # self.store.tensorboard.add_histogram('advantages',
             #         saps.advantages, self.n_steps)
             # self.store.tensorboard.add_histogram('returns', saps.returns,
@@ -458,6 +458,10 @@ class Trainer():
         if self.ANNEAL_LR:
             self.POLICY_SCHEDULER.step()
             self.VALUE_SCHEDULER.step()
+
+        if self.ANNEAL_CLIP_EPS:
+            self.params.CLIP_EPS -= self.params.CLIP_EPS / (
+                    self.TRAIN_STEPS - self.n_steps)
 
         if self.ANNEAL_KL_PENALTY_COEFF:
             self.params.KL_PENALTY_COEFF_EFFECTIVE -= (
