@@ -1,0 +1,552 @@
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/0e0e54d6-6152-45f8-970a-d20a677afdc8
+ERROR 'anneal_clip_eps'
+Process Process-20:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/b1ac3023-8b21-4d6e-a91f-0aa777cb3d76
+ERROR 'anneal_clip_eps'
+Process Process-6:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/d797d75b-099f-46cf-a038-e895fdcba860
+ERROR 'anneal_clip_eps'
+Process Process-17:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/1bb0816b-e336-45c9-8fb9-d5f1de90f653
+ERROR 'anneal_clip_eps'
+Process Process-4:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/dfd2a65a-1110-4f95-8bd9-57acbf78a475
+ERROR 'anneal_clip_eps'
+Process Process-12:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/b604d7e1-f008-4aa6-a4d2-be9cabad67e4
+ERROR 'anneal_clip_eps'
+Process Process-16:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/b977d97b-6ce9-41a3-a328-f9e51003ea07
+ERROR 'anneal_clip_eps'
+Process Process-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/b2bd33dc-9057-4e7a-a652-d35332e00ee2
+ERROR 'anneal_clip_eps'
+Process Process-21:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/66b71b76-5c2e-420b-bd38-fafa782c3548
+ERROR 'anneal_clip_eps'
+Process Process-7:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/13cc15f1-7cbb-40fa-8c88-08f974a1307a
+ERROR 'anneal_clip_eps'
+Process Process-24:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/ea14c8d7-b5fd-4380-b795-129ebc053453
+ERROR 'anneal_clip_eps'
+Process Process-15:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/afdc02d8-9083-4ca7-812f-a0e07278b088
+ERROR 'anneal_clip_eps'
+Process Process-3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/aa8da65e-2ec6-46d4-b21f-383618debec9
+ERROR 'anneal_clip_eps'
+Process Process-10:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/114209ce-948e-4b6b-88e1-f069a5c9a4be
+ERROR 'anneal_clip_eps'
+Process Process-8:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/f0e7bafb-52ef-41dc-b7c3-5d0bd3c98283
+ERROR 'anneal_clip_eps'
+Process Process-13:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/6b507a82-6a1b-4296-ad5c-343a1359ad4c
+ERROR 'anneal_clip_eps'
+Process Process-11:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/e3c58922-db16-450e-a9d9-de6d9e2e4571
+ERROR 'anneal_clip_eps'
+Process Process-19:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/94e298df-5d00-425c-b72b-5e74e0fb217a
+ERROR 'anneal_clip_eps'
+Process Process-18:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/f1897c76-5361-41c0-bdad-4bf009c015c1
+ERROR 'anneal_clip_eps'
+Process Process-23:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/77e4d6fd-3a38-41f5-892f-918f83c21f4e
+ERROR 'anneal_clip_eps'
+Process Process-14:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/b69d3430-083c-4f7e-aaa1-e836d3589f59
+ERROR 'anneal_clip_eps'
+Process Process-9:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/269a30ac-235a-4922-a0f0-5b06ace936a6
+ERROR 'anneal_clip_eps'
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/bfb35a7c-45cd-49ae-8960-bba278f7571c
+ERROR 'anneal_clip_eps'
+Process Process-5:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'
+Logging in: /home/eecs/chloehsu/ppo_ablation/code-for-paper/src/reward_scaling/agents/25d8c247-2151-450e-b7e3-6209dd7cbd55
+ERROR 'anneal_clip_eps'
+Process Process-22:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.6/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "run_agents.py", line 20, in run_single_config
+    raise e
+  File "run_agents.py", line 17, in run_single_config
+    main(params)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/run.py", line 119, in main
+    mean_reward = p.train_step()
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 497, in train_step
+    surr_loss, val_loss = self.take_steps(saps)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 462, in take_steps
+    if self.ANNEAL_CLIP_EPS:
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/agent.py", line 154, in __getattr__
+    return getattr(self.params, x)
+  File "/home/eecs/chloehsu/ppo_ablation/code-for-paper/src/policy_gradients/torch_utils.py", line 35, in __getattr__
+    return self.params[x.lower()]
+KeyError: 'anneal_clip_eps'

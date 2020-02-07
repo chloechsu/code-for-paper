@@ -459,10 +459,6 @@ class Trainer():
             self.POLICY_SCHEDULER.step()
             self.VALUE_SCHEDULER.step()
 
-        if self.ANNEAL_CLIP_EPS:
-            self.params.CLIP_EPS -= self.params.CLIP_EPS / (
-                    self.TRAIN_STEPS - self.n_steps)
-
         if self.ANNEAL_KL_PENALTY_COEFF:
             self.params.KL_PENALTY_COEFF_EFFECTIVE -= (
                     self.params.KL_PENALTY_COEFF / self.TRAIN_STEPS)
