@@ -1,5 +1,4 @@
-# Code for "Questioning Proximal Policy Optimization with Multiplicative
-# Weights"
+# Code for "Questioning Proximal Policy Optimization with Multiplicative Weights"
 
 This repository is is forked from the open-source code for ICLR 2020 paper
 "Implementation Matters in Deep RL: A Case Study on PPO and TRPO":
