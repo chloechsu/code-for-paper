@@ -1,5 +1,8 @@
 .ipynb_checkpoints
+.pyc
 agent_configs/
 agents/
 MUJOCO_LOG.TXT
 nohup.txt
+.nfs*
+.DS_Store
