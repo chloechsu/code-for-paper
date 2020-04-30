@@ -192,11 +192,9 @@ class DiscPolicy(nn.Module):
         Returns:
         - Empirical KL from p to q
         '''
-        print(get_mean)
         p, q = p.squeeze(), q.squeeze()
         assert shape_equal_cmp(p, q)
         kl = (p * (ch.log(p + 1e-10) - ch.log(q + 1e-10))).sum(-1)
-        print(kl.shape)
         if get_mean:
             return kl.mean()
         return kl
@@ -464,10 +462,12 @@ class CtsBetaPolicy(nn.Module):
             return self.final_value(x)
 
     def scale_by_action_bounds(self, beta_dist_samples):
+        # Scale [0, 1] back to action space.
         return beta_dist_samples * (self.action_space_high -
                 self.action_space_low) + self.action_space_low
 
     def inv_scale_by_action_bounds(self, actions):
+        # Scale action space to [0, 1].
         return (actions - self.action_space_low) / (self.action_space_high -
                 self.action_space_low)
 
@@ -509,11 +509,13 @@ class CtsBetaPolicy(nn.Module):
         assert shape_equal([-1, self.action_dim], p_alpha, p_beta, q_alpha,
                 q_beta)
 
+        # Expectation of log x under p.
         e_log_x = ch.digamma(p_alpha) - ch.digamma(p_alpha + p_beta)
+        # Expectation of log (1-x) under p.
         e_log_1_m_x = ch.digamma(p_beta) - ch.digamma(p_alpha + p_beta)
         kl_per_action_dim = (p_alpha - q_alpha) * e_log_x
         kl_per_action_dim += (p_beta - q_beta) * e_log_1_m_x
-        kl_per_action_dim += self.lbeta(p_alpha, p_beta)
+        kl_per_action_dim -= self.lbeta(p_alpha, p_beta)
         kl_per_action_dim += self.lbeta(q_alpha, q_beta)
         # By chain rule on KL divergence.
         kl_joint = ch.sum(kl_per_action_dim, dim=1)
