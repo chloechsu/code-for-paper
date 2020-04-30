@@ -497,14 +497,12 @@ class CtsBetaPolicy(nn.Module):
         return ch.sum(log_probs, dim=1)
 
     def lbeta(self, alpha, beta):
+        '''The log beta function.'''
         return ch.lgamma(alpha) + ch.lgamma(beta) - ch.lgamma(alpha+beta)
 
     def calc_kl(self, p, q, get_mean=True):
         '''
-        Get the expected KL distance between two sets of gaussians over states -
-        gaussians p and q where p and q are each tuples (mean, var)
-        - In other words calculates E KL(p||q): E[sum p(x) log(p(x)/q(x))]
-        - From https://stats.stackexchange.com/a/60699
+        Get the expected KL distance between beta distributions.
         '''
         p_alpha, p_beta = p
         q_alpha, q_beta = q
