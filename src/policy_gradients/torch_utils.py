@@ -220,7 +220,10 @@ def select_prob_dists(pds, selected=None, detach=True):
     '''
     if type(pds) is tuple:
         if selected is not None:
-            tup = (pds[0][selected], pds[1])
+            if pds[1].shape[0] == pds[0].shape[0]:
+                tup = (pds[0][selected], pds[1][selected])
+            else:
+                tup = (pds[0][selected], pds[1])
         else:
             tup = pds
         return tuple(x.detach() if detach else x for x in tup)

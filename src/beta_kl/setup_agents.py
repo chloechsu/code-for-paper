@@ -9,17 +9,26 @@ with open("../MuJoCo.json") as f:
     BASE_CONFIG = json.load(f)
 
 PARAMS = {
-    "game": ["Walker2d-v2"],
+    "policy_net_type": ["CtsBetaPolicy"],
+    # "game": ["MountainCarContinuous-v0"],
+    # "game": ["InvertedPendulum-v2"],
+    "game": ["MountainCarContinuous-v0", "Pendulum-v0", "InvertedPendulum-v2",
+        "Humanoid-v2", "InvertedDoublePendulum-v2"],
     "mode": ["ppo"],
-    "out_dir": ["trust_region_experiment/agents"],
+    "clip_eps": [1e8],
+    "kl_penalty_coeff": [0.1, 1, 3, 10],
+    "ppo_lr_adam": [3e-4] * 10,
+    "kl_penalty_direction": ["new_to_old", "old_to_new"],
+    "out_dir": ["beta_kl/agents"],
     "norm_rewards": ["returns"],
     "initialization": ["orthogonal"],
-    "anneal_lr": [True],
+    "anneal_lr": [False],
     "value_clipping": [False],
-    "ppo_lr_adam": [1e-4] * 10,
-    "advanced_logging": [True],
+    "clip_advantages": [1e8],
+    # "ppo_lr_adam": iwt(1e-5, 2.9e-4, 7e-5, 5),
     "val_lr": [2e-5],
-    "cpu": [True]
+    "cpu": [True],
+    "advanced_logging": [False],
 }
 
 all_configs = [{**BASE_CONFIG, **p} for p in dict_product(PARAMS)]

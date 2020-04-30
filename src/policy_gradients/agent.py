@@ -62,6 +62,8 @@ class Trainer():
         self.envs = [env_constructor() for _ in range(self.NUM_ACTORS)]
         self.params.AGENT_TYPE = "discrete" if self.envs[0].is_discrete else "continuous"
         self.params.NUM_ACTIONS = self.envs[0].num_actions
+        self.params.ACTION_SPACE_LOW = self.envs[0].env.action_space.low
+        self.params.ACTION_SPACE_HIGH = self.envs[0].env.action_space.high
         self.params.NUM_FEATURES = self.envs[0].num_features 
         self.policy_step = step_with_mode(self.MODE)
         self.params.MAX_KL_INCREMENT = (self.params.MAX_KL_FINAL - self.params.MAX_KL) / self.params.TRAIN_STEPS
@@ -72,6 +74,8 @@ class Trainer():
         # Instantiation
         self.policy_model = policy_net_class(self.NUM_FEATURES, self.NUM_ACTIONS,
                                              self.INITIALIZATION,
+                                             action_space_low=self.ACTION_SPACE_LOW,
+                                             action_space_high=self.ACTION_SPACE_HIGH,
                                              time_in_state=time_in_state)
 
         opts_ok = (self.PPO_LR == -1 or self.PPO_LR_ADAM == -1)
@@ -496,7 +500,7 @@ class Trainer():
         # print("Surrogate Loss:", surr_loss.item(), 
         #                 "| Value Loss:", val_loss.item())
         # print("Time elapsed (s):", time.time() - start_time)
-        if not self.policy_model.discrete:
+        if isinstance(self.policy_model, CtsPolicy):
             mean_std = ch.exp(self.policy_model.log_stdev).mean()
             # print("Agent stdevs: %s" % mean_std)
             self.store.log_table_and_tb('optimization', {
