@@ -41,5 +41,8 @@
     "save_iters": 0,
     "out_dir": null,
     "clip_grad_norm": -1,
-    "anneal_kl_penalty_coeff": false
+    "anneal_kl_penalty_coeff": false,
+    "reward_gaussian_noise": 0.0,
+    "reward_uniform_noise": 0.0,
+    "reward_sparsity": 0.0
 }

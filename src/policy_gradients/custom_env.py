@@ -3,6 +3,7 @@ from gym.spaces.discrete import Discrete
 from gym.spaces.box import Box as Continuous
 import gym
 from .torch_utils import RunningStat, ZFilter, Identity, StateWithTime, RewardFilter
+from .torch_utils import add_gaussian_noise, add_uniform_noise, add_sparsity_noise
 
 class Env:
     '''
@@ -10,13 +11,16 @@ class Env:
     - Rewards normalization
     - State normalization
     - Adding timestep as a feature with a particular horizon T
+    - Add gaussian noise to reward.
+    - Add uniform noise to reward.
     Also provides utility functions/properties for:
     - Whether the env is discrete or continuous
     - Size of feature space
     - Size of action space
     Provides the same API (init, step, reset) as the OpenAI gym
     '''
-    def __init__(self, game, norm_states, norm_rewards, params, add_t_with_horizon=None, clip_obs=None, clip_rew=None):
+    def __init__(self, game, norm_states, norm_rewards, params,
+            add_t_with_horizon=None, clip_obs=None, clip_rew=None):
         self.env = gym.make(game)
         clip_obs = None if clip_obs < 0 else clip_obs
         clip_rew = None if clip_rew < 0 else clip_rew
@@ -50,6 +54,10 @@ class Env:
         elif norm_rewards == "returns":
             self.reward_filter = RewardFilter(self.reward_filter, shape=(), gamma=params.GAMMA, clip=clip_rew)
 
+        self.reward_gaussian_noise = params.REWARD_GAUSSIAN_NOISE
+        self.reward_uniform_noise = params.REWARD_UNIFORM_NOISE
+        self.reward_sparsity = params.REWARD_SPARSITY
+
         # Running total reward (set to 0.0 at resets)
         self.total_true_reward = 0.0
 
@@ -66,7 +74,10 @@ class Env:
         state = self.state_filter(state)
         self.total_true_reward += reward
         self.counter += 1
-        _reward = self.reward_filter(reward)
+        _reward = add_gaussian_noise(reward, self.reward_gaussian_noise)
+        _reward = add_uniform_noise(_reward, self.reward_uniform_noise)
+        _reward = add_sparsity_noise(_reward, self.reward_sparsity)
+        _reward = self.reward_filter(_reward)
         if is_done:
             info['done'] = (self.counter, self.total_true_reward)
         return state, _reward, is_done, info

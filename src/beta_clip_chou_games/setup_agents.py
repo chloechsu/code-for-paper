@@ -10,15 +10,16 @@ with open("../MuJoCo.json") as f:
 
 PARAMS = {
     "policy_net_type": ["CtsBetaPolicy"],
-    "game": ["Walker2d-v2", "Humanoid-v2", "Swimmer-v2", "Hopper-v2",
-        "HalfCheetah-v2", "InvertedPendulum-v2", "Reacher-v2",
-        "InvertedDoublePendulum-v2"],
+    # "game": ["MountainCarContinuous-v0"],
+    # "game": ["InvertedPendulum-v2"],
+    "game": ["MountainCarContinuous-v0", "Pendulum-v0", "InvertedPendulum-v2",
+        "Humanoid-v2", "InvertedDoublePendulum-v2"],
     "mode": ["ppo"],
-    "clip_eps": [0.2],
-    "kl_penalty_coeff": [0],
-    "ppo_lr_adam": [3e-4] * 20,
-    "kl_penalty_direction": ["new_to_old", "old_to_new"],
-    "out_dir": ["beta_clip/agents"],
+    "clip_eps": [0.01, 0.1, 0.2, 0.3, 0.5, 1e8],
+    "kl_penalty_coeff": [0.0],
+    "ppo_lr_adam": [3e-4] * 10,
+    "kl_penalty_direction": ["old_to_new"],
+    "out_dir": ["beta_clip_chou_games/agents"],
     "norm_rewards": ["returns"],
     "initialization": ["orthogonal"],
     "anneal_lr": [False],
@@ -27,7 +28,7 @@ PARAMS = {
     # "ppo_lr_adam": iwt(1e-5, 2.9e-4, 7e-5, 5),
     "val_lr": [2e-5],
     "cpu": [True],
-    "advanced_logging": [True],
+    "advanced_logging": [False],
 }
 
 all_configs = [{**BASE_CONFIG, **p} for p in dict_product(PARAMS)]

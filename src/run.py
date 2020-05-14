@@ -213,6 +213,14 @@ if __name__ == '__main__':
     parser.add_argument('--clip-observations', type=float, help='clips obs eps')
     parser.add_argument('--clip-advantages', type=float, help='clip adv eps')
 
+    # Reward stochasticity params.
+    parser.add_argument('--reward_gaussian_noise', type=float,
+                        help='gaussian noise std on reward')
+    parser.add_argument('--reward_uniform_noise', type=float,
+                        help='probability of getting uniformly sampled reward')
+    parser.add_argument('--reward_sparsity', type=float,
+                        help='probability of getting 0 reward')
+
     # Saving
     parser.add_argument('--save-iters', type=int, help='how often to save model (0 = no saving)')
 

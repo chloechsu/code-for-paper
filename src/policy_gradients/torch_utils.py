@@ -534,3 +534,21 @@ def orthogonal_init(tensor, gain=1):
         tensor.view_as(q).copy_(q)
         tensor.mul_(gain)
     return tensor
+
+
+def add_gaussian_noise(reward, std):
+    if std > 0.0: 
+        reward += np.random.normal(loc=0.0, scale=std)
+    return reward
+
+
+def add_uniform_noise(reward, p, high=1., low=-1.):
+    random_mask = np.random.binomial(1, p)
+    random_reward = np.random.uniform(low, high)
+    return random_mask * random_reward + (1 - random_mask) * reward
+
+
+def add_sparsity_noise(reward, p):
+    random_mask = np.random.binomial(1, p)
+    return (1 - random_mask) * reward
+
