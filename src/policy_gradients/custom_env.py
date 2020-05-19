@@ -21,6 +21,10 @@ class Env:
     '''
     def __init__(self, game, norm_states, norm_rewards, params,
             add_t_with_horizon=None, clip_obs=None, clip_rew=None):
+
+        if game.startswith('SimpleEnv'):
+            self.env = SimpleEnv(game)
+
         self.env = gym.make(game)
         clip_obs = None if clip_obs < 0 else clip_obs
         clip_rew = None if clip_rew < 0 else clip_rew
@@ -81,5 +85,3 @@ class Env:
         if is_done:
             info['done'] = (self.counter, self.total_true_reward)
         return state, _reward, is_done, info
-
-    
