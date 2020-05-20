@@ -139,6 +139,8 @@ class Trainer():
             paper_constraint_cols = {
                 'avg_kl_old_to_new':float,
                 'avg_kl_new_to_old':float,
+                'avg_ratio':float,
+                'avg_rat_minus_one_sq': float,
                 'max_ratio':float,
                 'opt_step':int
             }
