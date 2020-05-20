@@ -30,7 +30,8 @@ def adv_normalize(adv):
     n_advs = (adv - adv.mean())/(adv.std()+1e-8)
     return n_advs
 
-def surrogate_reward(adv, *, new, old, clip_eps=None, clip_adv=None):
+def surrogate_reward(adv, *, new, old, clip_eps=None, clip_adv=None,
+        sign_adv=False):
     '''
     Computes the surrogate reward for TRPO and PPO:
     R(\theta) = E[r_t * A_t]
@@ -42,6 +43,7 @@ def surrogate_reward(adv, *, new, old, clip_eps=None, clip_adv=None):
     - log_ps_old, the log probabilities assigned to taken events by \theta_{old}
     - clip_EPS, the clipping boundary for PPO loss
     - clip_adv, the clipping bondary for normalized advantages
+    - sign_adv, whether to take the sign of normalized advantages
     Returns:
     - The surrogate loss as described above
     '''
@@ -53,6 +55,8 @@ def surrogate_reward(adv, *, new, old, clip_eps=None, clip_adv=None):
     # Clip advantages
     if clip_adv is not None:
         n_advs = ch.clamp(n_advs, -clip_adv, clip_adv)
+    if sign_adv:
+        n_advs = ch.sign(n_advs)
 
     assert shape_equal_cmp(log_ps_new, log_ps_old, n_advs)
 
@@ -257,11 +261,14 @@ def ppo_step(all_states, actions, old_log_ps, rewards, returns, not_dones,
             shape_equal_cmp(new_log_ps, batch_old_log_ps)
 
             # Calculate rewards
-            unclp_rew = surrogate_reward(batch_advs, new=new_log_ps,
-                    old=batch_old_log_ps, clip_adv=params.CLIP_ADVANTAGES)
+            unclp_rew = surrogate_reward(
+                    batch_advs, new=new_log_ps, old=batch_old_log_ps,
+                    clip_adv=params.CLIP_ADVANTAGES,
+                    sign_adv=params.SIGN_ADVANTAGES)
             clp_rew = surrogate_reward(batch_advs, new=new_log_ps,
                         old=batch_old_log_ps, clip_eps=params.CLIP_EPS,
-                        clip_adv=params.CLIP_ADVANTAGES)
+                        clip_adv=params.CLIP_ADVANTAGES,
+                        sign_adv=params.SIGN_ADVANTAGES)
             surrogate = -ch.min(unclp_rew, clp_rew).mean()
 
             if params.KL_PENALTY_DIRECTION == 'old_to_new':

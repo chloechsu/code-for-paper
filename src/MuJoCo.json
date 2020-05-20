@@ -28,6 +28,7 @@
     "clip_rewards": 10.0,
     "clip_observations": 10.0,
     "clip_advantages": 1e8,
+    "sign_advantages": false,
     "train_steps": 500,
     "initialization": "orthogonal",
     "share_weights": false,
