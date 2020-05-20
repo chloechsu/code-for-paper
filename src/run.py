@@ -212,6 +212,7 @@ if __name__ == '__main__':
     parser.add_argument('--clip-rewards', type=float, help='clip rews eps')
     parser.add_argument('--clip-observations', type=float, help='clips obs eps')
     parser.add_argument('--clip-advantages', type=float, help='clip adv eps')
+    parser.add_argument('--sign-advantages', type=float, help='take adv sign')
 
     # Reward stochasticity params.
     parser.add_argument('--reward_gaussian_noise', type=float,

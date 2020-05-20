@@ -178,7 +178,7 @@ class DiscPolicy(nn.Module):
         for affine in self.affine_layers:
             x = self.activation(affine(x))
         
-        probs = F.softmax(self.final(x))
+        probs = F.softmax(self.final(x), dim=-1)
         return probs
 
     def calc_kl(self, p, q, get_mean=True):
@@ -215,6 +215,7 @@ class DiscPolicy(nn.Module):
         '''
         try:
             dist = ch.distributions.categorical.Categorical(p)
+            actions = actions.squeeze()
             return dist.log_prob(actions)
         except Exception as e:
             raise ValueError("Numerical error")
