@@ -242,11 +242,11 @@ def ppo_step(all_states, actions, old_log_ps, rewards, returns, not_dones,
         orig_vs = net.get_value(all_states).squeeze(-1).view([params.NUM_ACTORS, -1])
         old_vs = orig_vs.detach()
 
+    old_pds = select_prob_dists(net(all_states), detach=True)
     for _ in range(params.PPO_EPOCHS):
         state_indices = np.arange(all_states.shape[0])
         np.random.shuffle(state_indices)
         splits = np.array_split(state_indices, params.NUM_MINIBATCHES)
-        old_pds = select_prob_dists(net(all_states), detach=True)
         for selected in splits:
             def sel(*args):
                 return [v[selected] for v in args]
