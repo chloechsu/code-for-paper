@@ -21,21 +21,23 @@ clip_params = {'kl_penalty_coeff': 0., 'clip_eps': 0.2}
 plain_params = {'kl_penalty_coeff': 0., 'clip_eps': None}
 
 comparisons = {
-    'kl_flip': new_to_old_params,
-    'kl_orig': old_to_new_params,
-    'clip': clip_params,
-    'plain_pg': plain_params
+    'Reverse KL': new_to_old_params,
+    'Forward KL': old_to_new_params,
+    'Clipping': clip_params,
+    'Unregularized': plain_params
 }
 
 base_params = {
-    'ppo_epochs': 1,
-    'num_minibatches': 16,
+    'ppo_epochs': 10,
+    'num_minibatches': 1,
     'clip_advantages': None,
+    'sign_advantages': False,
+    'adv_norm': True,
     'kl_penalty_direction': 'old_to_new',
     'entropy_coeff': 0.0,
     'share_weights': False,
     'clip_grad_norm': -1,
-    'batch_size': 128,
+    'batch_size': 2,
     'max_episode_len': 1,
     'lr': 1e-2,
 }
@@ -54,11 +56,13 @@ class SimpleEnv(gym.Env):
         if is_discrete:
             self.action_space = Discrete(action_dim)
         else:
-            low = -10. * np.ones(action_dim)
+            low = -10. * np.ones(action_dim, dtype=np.float32)
             high = -low
             self.action_space = Continuous(low=low, high=high, dtype=np.float32) 
-        self.observation_space = Continuous(low=np.zeros(obs_dim),
-                high=np.ones(obs_dim), dtype=np.float32) 
+        self.observation_space = Continuous(
+                low=np.zeros(obs_dim, dtype=np.float32),
+                high=np.ones(obs_dim, dtype=np.float32),
+                dtype=np.float32) 
         self.reset()
 
     def reset(self):
@@ -71,6 +75,166 @@ class SimpleEnv(gym.Env):
                 self.noise_std * np.random.normal())
         done = True
         return obs, reward, done, {}
+
+
+class TwoActionEnv(gym.Env):
+    '''
+    A simple single-state environment with two discrete actions.
+    The first action yields reward +1 with probability 0.8, -1 with probability
+    0.2. The second action yields reward 0.
+    '''
+    def __init__(self, noise_std=1e-6):
+        self.action_dim = 2
+        self.obs_dim = 1
+        self.noise_std = noise_std
+        self.action_space = Discrete(self.action_dim)
+        self.observation_space = Continuous(
+                low=np.zeros(obs_dim, dtype=np.float32),
+                high=np.ones(obs_dim, dtype=np.float32),
+                dtype=np.float32) 
+        self.reset()
+
+    def reset(self):
+        obs = np.random.rand(self.obs_dim)
+        return obs
+
+    def step(self, action):
+        obs = np.random.rand(self.obs_dim)
+        if action == 0:
+            if np.random.rand() <= 0.8:
+                reward = 1.0
+            else:
+                reward = -1.0
+        else:
+            reward = 0.0
+        reward += self.noise_std * np.random.normal()
+        done = True
+        return obs, reward, done, {}
+
+
+class BanditEnv(gym.Env):
+    '''
+    A simple single-state environment with 3 discrete actions.
+    Action 0, 1, 2 have reward 1, 0.5, -50.
+    '''
+    def __init__(self, avg_rewards, noise_std=1e-3):
+        self.action_dim = len(avg_rewards)
+        self.avg_rewards = avg_rewards
+        self.obs_dim = 1
+        self.noise_std = noise_std
+        self.action_space = Discrete(self.action_dim)
+        self.observation_space = Continuous(
+                low=np.zeros(self.obs_dim, dtype=np.float32),
+                high=np.ones(self.obs_dim, dtype=np.float32),
+                dtype=np.float32) 
+        self.reset()
+
+    def reset(self):
+        obs = np.random.rand(self.obs_dim)
+        return obs
+
+    def step(self, action):
+        obs = np.random.rand(self.obs_dim)
+        reward = self.avg_rewards[int(action)] + self.noise_std * np.random.normal()
+        done = True
+        return obs, reward, done, {}
+
+
+class CtsBanditEnv(gym.Env):
+    '''
+    A simple single-state environment with one-dimensional continuous actions.
+    Reward is 0.5 for a in (0.5, 2), 1 for a in (-1.0, -0.8), and 0 otherwise.
+    '''
+    def __init__(self, noise_std=1e-3):
+        self.action_dim = 1
+        self.obs_dim = 1
+        self.noise_std = noise_std
+        low = np.array([-3])
+        high = np.array([3])
+        self.action_space = Continuous(low=low, high=high, dtype=np.float32) 
+        self.observation_space = Continuous(
+                low=np.zeros(self.obs_dim, dtype=np.float32),
+                high=np.ones(self.obs_dim, dtype=np.float32),
+                dtype=np.float32) 
+        self.reset()
+
+    def reset(self):
+        obs = np.random.rand(self.obs_dim)
+        return obs
+
+    def step(self, action):
+        obs = np.random.rand(self.obs_dim)
+        reward = self.noise_std * np.random.normal()
+        if action > 0.5 and action < 2.0:
+            reward += 0.5
+        if action > -1.0 and action < -0.8:
+            reward += 1.0
+        done = True
+        return obs, reward, done, {}
+
+
+class SimpleDiscPolicy(DiscPolicy):
+    '''A simpler version of disc policy without neural network.'''
+
+    def __init__(self, action_dim, init=None, **kwargs):
+        super(DiscPolicy, self).__init__()
+        self.action_dim = action_dim
+        if init is None:
+            init = torch.ones((1, action_dim))
+        else:
+            init = torch.Tensor(init.reshape(1, action_dim))
+        self.logits = torch.nn.Parameter(init)
+
+    def forward(self, x):
+        return torch.nn.functional.softmax(self.logits).repeat(
+                x.shape[0], 1)
+
+
+class SimpleCtsPolicy(CtsPolicy):
+    '''A simpler version of Gaussian policy without neural network.'''
+
+    def __init__(self, action_dim, init=None, **kwargs):
+        super(CtsPolicy, self).__init__()
+        self.action_dim = action_dim
+        if init is None:
+            mean_init = torch.zeros((1, action_dim))
+            log_std_init = torch.zeros(action_dim)
+        else:
+            mean_init = torch.Tensor(init['mean'].reshape(1, action_dim))
+            log_std_init = torch.Tensor(init['log_std'].reshape(action_dim))
+        self.mean = torch.nn.Parameter(mean_init)
+        self.log_stdev = torch.nn.Parameter(log_std_init)
+
+    def forward(self, x):
+        return self.mean.repeat(x.shape[0], 1), torch.exp(
+                self.log_stdev)
+
+
+class SimpleCtsBetaPolicy(CtsBetaPolicy):
+    '''A simpler version of Beta policy without neural network.'''
+
+    def __init__(self, action_dim, action_space_low, action_space_high, init=None):
+        super(CtsBetaPolicy, self).__init__()
+        self.action_dim = action_dim
+        self.action_space_low = action_space_low
+        self.action_space_high = action_space_high
+
+        if init is None:
+            pre_softplus_a_init = -4. * torch.ones((1, action_dim))
+            pre_softplus_b_init = -4. * torch.ones((1, action_dim))
+        else:
+            pre_softplus_a_init = torch.log(torch.Tensor(init['a'].reshape(1,
+                action_dim)) - 1.0)
+            pre_softplus_b_init = torch.log(torch.Tensor(init['b'].reshape(1,
+                action_dim)) - 1.0)
+        self.pre_softplus_a = torch.nn.Parameter(pre_softplus_a_init)
+        self.pre_softplus_b = torch.nn.Parameter(pre_softplus_b_init)
+
+    def forward(self, x):
+        softplus = torch.nn.Softplus()
+        a = torch.add(softplus(self.pre_softplus_a), 1.)
+        b = torch.add(softplus(self.pre_softplus_b), 1.)
+        return a.repeat(x.shape[0], 1), b.repeat(x.shape[0], 1)
 
 
 def sample_trajectory(env, policy, max_episode_length):
@@ -168,26 +332,30 @@ def get_reward_to_go(rewards, gamma=0.99):
     return np.array(all_discounted_cumsums)
  
 
-def get_obs_acs_rewards_advs(trajectories):
+def get_obs_acs_rewards_advs(trajectories, adv_norm=True):
     obs = np.concatenate([tau["observation"] for tau in trajectories], axis=0)
     acs = np.concatenate([tau["action"] for tau in trajectories], axis=0)
     rewards = np.concatenate([tau["reward"] for tau in trajectories])
     reward_to_go = np.concatenate(
         [get_reward_to_go(tau["reward"]) for tau in trajectories])
-    advs = (reward_to_go - np.mean(reward_to_go)) / (np.std(reward_to_go) + 1e-8)
+    if adv_norm:
+        advs = (reward_to_go - np.mean(reward_to_go)) / (np.std(reward_to_go) + 1e-8)
+    else:
+        advs = reward_to_go
     return obs, acs, rewards, advs
 
 
 def step(env, policy, params):
     trajs, steps_in_trajs = sample_trajectories_by_batch_size(
         env, policy, params.batch_size, params.max_episode_len)
-    obs, acs, rewards, advs = get_obs_acs_rewards_advs(trajs)
+    obs, acs, rewards, advs = get_obs_acs_rewards_advs(trajs,
+            adv_norm=params.adv_norm)
     obs = torch.Tensor(obs)
     acs = torch.Tensor(acs)
     advs = torch.Tensor(advs)
     with torch.no_grad():
-        old_pds = policy(obs)
-        old_log_ps = policy.get_loglikelihood(old_pds, acs)
+        old_pds = policy(obs).detach()
+        old_log_ps = policy.get_loglikelihood(old_pds, acs).detach()
     loss = ppo_step(obs, acs, old_log_ps, None, None, None, advs, policy, params, None, None)
     return_dict = {
         'loss': loss.detach().item(),
@@ -211,24 +379,26 @@ def train(env, policy, params, n_steps):
     return df
 
 
-def compare(policy_type, action_dim, n_steps=20, repeats=10, seed=0, noise_std=0.1,
+def compare(env, policy_type, n_steps=20, repeats=10, seed=0, policy_init=None,
         **kwargs):
     np.random.seed(seed)
     # Handle different policy classes.
     policy_type = policy_type.lower()
     policy_cls_map = {
-            'gaussian': CtsPolicy, 'beta': CtsBetaPolicy, 'discrete': DiscPolicy}
+            'gaussian': SimpleCtsPolicy,
+            'beta': SimpleCtsBetaPolicy,
+            'discrete': SimpleDiscPolicy}
     policy_cls = policy_cls_map[policy_type]
-    env = SimpleEnv(action_dim=action_dim, noise_std=noise_std,
-            is_discrete=(policy_type == 'discrete'))
-    base_params.update(**kwargs)
+    base_params_ = base_params.copy()
+    base_params_.update(**kwargs)
     data = None
     for i, name in enumerate(comparisons.keys()):
-        params = base_params.copy()
+        params = base_params_.copy()
         params.update(comparisons[name])
         for j in range(repeats):
-            policy = policy_cls(env.obs_dim, env.action_dim, init='xavier',
-                    hidden_sizes=[env.action_dim])
+            policy = policy_cls(env.action_dim, init=policy_init,
+                    action_space_low=env.action_space.low,
+                    action_space_high=env.action_space.high)
             params['policy_adam'] = torch.optim.Adam(policy.parameters(),
                     lr=params['lr'])
             data_this_run = train(env, policy, Parameters(params), n_steps)
