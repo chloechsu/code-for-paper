@@ -19,7 +19,7 @@ def paper_constraints_logging(agent, saps, old_pds, table):
     ratios = ch.exp(new_log_ps - saps.action_log_probs)
     max_rat = ratios.max()
     avg_rat = ratios.mean()
-    avg_rat_minus_one_sq = ch.square(ch.sub(ratios, 1.)).mean()
+    avg_rat_minus_one_sq = ch.sub(ratios, 1.).pow(2).mean()
 
     avg_kl_old_to_new = agent.policy_model.calc_kl(old_pds, new_pds)
     avg_kl_new_to_old = agent.policy_model.calc_kl(new_pds, old_pds)

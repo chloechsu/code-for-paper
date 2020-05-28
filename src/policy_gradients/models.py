@@ -341,7 +341,7 @@ class CtsPolicy(nn.Module):
         except Exception as e:
             raise ValueError("Numerical error")
 
-    def calc_kl(self, p, q, get_mean=True):
+    def calc_kl(self, p, q, npg_approx=False, get_mean=True):
         '''
         Get the expected KL distance between two sets of gaussians over states -
         gaussians p and q where p and q are each tuples (mean, var)
@@ -365,7 +365,10 @@ class CtsPolicy(nn.Module):
         tr = (p_var / q_var).sum()
         quadratic = ((diff / q_var) * diff).sum(dim=1)
 
-        kl_sum = 0.5 * (log_quot_frac - d + tr + quadratic)
+        if npg_approx:
+            kl_sum = 0.5 * quadratic + 0.25 * (p_var / q_var - 1.).pow(2).sum()
+        else:
+            kl_sum = 0.5 * (log_quot_frac - d + tr + quadratic)
         assert kl_sum.shape == (p_mean.shape[0],)
         if get_mean:
             return kl_sum.mean()
@@ -501,10 +504,11 @@ class CtsBetaPolicy(nn.Module):
         '''The log beta function.'''
         return ch.lgamma(alpha) + ch.lgamma(beta) - ch.lgamma(alpha+beta)
 
-    def calc_kl(self, p, q, get_mean=True):
+    def calc_kl(self, p, q, npg_approx=False, get_mean=True):
         '''
         Get the expected KL distance between beta distributions.
         '''
+        assert not npg_approx
         p_alpha, p_beta = p
         q_alpha, q_beta = q
         assert shape_equal([-1, self.action_dim], p_alpha, p_beta, q_alpha,

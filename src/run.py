@@ -180,6 +180,10 @@ if __name__ == '__main__':
         'new_to_old'], help='ppo kl penalty direction')
     parser.add_argument('--kl-penalty-coeff', type=float,
             help='ppo kl penalty coeff')
+    parser.add_argument('--kl-closed-form', type=bool,
+            help='ppo kl estimate with closed form or sampled estimate')
+    parser.add_argument('--kl-npg', type=bool,
+            help='ppo kl penalty with npg inspired penalty form')
     parser.add_argument('--anneal-kl-penalty-coeff', type=bool,
             help='anneal ppo kl penalty coeff linearly from start to finish')
     parser.add_argument('--anneal-clip-eps', type=bool,
@@ -213,6 +217,7 @@ if __name__ == '__main__':
     parser.add_argument('--clip-observations', type=float, help='clips obs eps')
     parser.add_argument('--clip-advantages', type=float, help='clip adv eps')
     parser.add_argument('--sign-advantages', type=float, help='take adv sign')
+    parser.add_argument('--norm-advantages', type=float, help='normalize adv')
 
     # Reward stochasticity params.
     parser.add_argument('--reward_gaussian_noise', type=float,

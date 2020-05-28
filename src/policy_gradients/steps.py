@@ -31,7 +31,7 @@ def adv_normalize(adv):
     return n_advs
 
 def surrogate_reward(adv, *, new, old, clip_eps=None, clip_adv=None,
-        sign_adv=False):
+        sign_adv=False, norm_adv=True):
     '''
     Computes the surrogate reward for TRPO and PPO:
     R(\theta) = E[r_t * A_t]
@@ -50,13 +50,16 @@ def surrogate_reward(adv, *, new, old, clip_eps=None, clip_adv=None,
     log_ps_new, log_ps_old = new, old
 
     # Normalized Advantages
-    n_advs = adv_normalize(adv)
+    if norm_adv:
+        n_advs = adv_normalize(adv)
+    else:
+        n_advs = adv
 
     # Clip advantages
     if clip_adv is not None:
         n_advs = ch.clamp(n_advs, -clip_adv, clip_adv)
     if sign_adv:
-        n_advs = ch.sign(n_advs)
+        n_advs = ch.sign(n_advs - ch.median(n_advs))
 
     assert shape_equal_cmp(log_ps_new, log_ps_old, n_advs)
 
@@ -264,17 +267,28 @@ def ppo_step(all_states, actions, old_log_ps, rewards, returns, not_dones,
             unclp_rew = surrogate_reward(
                     batch_advs, new=new_log_ps, old=batch_old_log_ps,
                     clip_adv=params.CLIP_ADVANTAGES,
-                    sign_adv=params.SIGN_ADVANTAGES)
+                    sign_adv=params.SIGN_ADVANTAGES,
+                    norm_adv=params.NORM_ADVANTAGES)
             clp_rew = surrogate_reward(batch_advs, new=new_log_ps,
                         old=batch_old_log_ps, clip_eps=params.CLIP_EPS,
                         clip_adv=params.CLIP_ADVANTAGES,
-                        sign_adv=params.SIGN_ADVANTAGES)
+                        sign_adv=params.SIGN_ADVANTAGES,
+                        norm_adv=params.NORM_ADVANTAGES)
             surrogate = -ch.min(unclp_rew, clp_rew).mean()
 
-            if params.KL_PENALTY_DIRECTION == 'old_to_new':
-                kl_penalty = net.calc_kl(batch_old_pds, dist)
+            if params.KL_CLOSED_FORM:
+                if params.KL_PENALTY_DIRECTION == 'old_to_new':
+                    kl_penalty = net.calc_kl(batch_old_pds, dist,
+                            npg_approx=params.KL_NPG_FORM)
+                else:
+                    kl_penalty = net.calc_kl(dist, batch_old_pds,
+                            npg_approx=params.KL_NPG_FORM)
             else:
-                kl_penalty = net.calc_kl(dist, batch_old_pds)
+                log_ratio = new_log_ps - batch_old_log_ps
+                if params.KL_PENALTY_DIRECTION == 'old_to_new':
+                    kl_penalty = ch.mean(-log_ratio)
+                else:
+                    kl_penalty = ch.mean(ch.exp(log_ratio) * log_ratio)
             kl_penalty *= params.KL_PENALTY_COEFF
 
             # Calculate entropy bonus

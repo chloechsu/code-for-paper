@@ -2,7 +2,7 @@ import numpy as np
 from gym.spaces.discrete import Discrete
 from gym.spaces.box import Box as Continuous
 import gym
-from .torch_utils import RunningStat, ZFilter, Identity, StateWithTime, RewardFilter
+from .torch_utils import RunningStat, ZFilter, Identity, StateWithTime, RewardFilter, ConstantFilter
 from .torch_utils import add_gaussian_noise, add_uniform_noise, add_sparsity_noise
 
 class Env:
@@ -57,6 +57,8 @@ class Env:
             self.reward_filter = ZFilter(self.reward_filter, shape=(), center=False, clip=clip_rew)
         elif norm_rewards == "returns":
             self.reward_filter = RewardFilter(self.reward_filter, shape=(), gamma=params.GAMMA, clip=clip_rew)
+        elif norm_rewards == "constant":
+            self.reward_filter = ConstantFilter(self.reward_filter, constant=0.05)
 
         self.reward_gaussian_noise = params.REWARD_GAUSSIAN_NOISE
         self.reward_uniform_noise = params.REWARD_UNIFORM_NOISE

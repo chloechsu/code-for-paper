@@ -129,6 +129,8 @@ class Trainer():
 
         if self.advanced_logging:
             self.store.add_table('normalized_advantage', {
+                'mean_pre_norm':float,
+                'std_pre_norm':float,
                 'opt_step':int,
                 'skewness':float,
                 'kurtosis':float,
@@ -171,6 +173,10 @@ class Trainer():
         
         V_s_tp1 = ch.cat([values[:,1:], values[:, -1:]], 1) * not_dones
         deltas = rewards + self.GAMMA * V_s_tp1 - values
+        #print('next_values', V_s_tp1.detach().numpy())
+        #print('values', values.detach().numpy())
+        #print('rewards', rewards.detach().numpy())
+        #print('delta_values', self.GAMMA*V_s_tp1 - values)
 
         # now we need to discount each path by gamma * lam
         advantages = ch.zeros_like(rewards)
@@ -410,6 +416,10 @@ class Trainer():
             old_pds = select_prob_dists(out_train, detach=True)
             val_old_pds = select_prob_dists(out_val, detach=True)
 
+            self.store.log_table_and_tb('normalized_advantage', {
+                'mean_pre_norm': torch.mean(saps.advantages),
+                'std_pre_norm': torch.std(saps.advantages),
+            })
             nadv = adv_normalize(saps.advantages)
             nadv_skewness = torch.mean(nadv ** 3)
             nadv_kurtosis = torch.mean(nadv ** 4)
@@ -420,14 +430,6 @@ class Trainer():
                 'min': torch.min(nadv), 
                 'opt_step':self.n_steps,
             })
-            self.store.tensorboard.add_histogram('normalized_advantages',
-                    nadv, self.n_steps)
-            # self.store.tensorboard.add_histogram('advantages',
-            #         saps.advantages, self.n_steps)
-            # self.store.tensorboard.add_histogram('returns', saps.returns,
-            #         self.n_steps)
-            # self.store.tensorboard.add_histogram('values', saps.values,
-            #         self.n_steps)
             self.store['normalized_advantage'].flush_row()
         # End logging code
 

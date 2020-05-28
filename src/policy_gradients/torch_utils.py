@@ -368,6 +368,20 @@ class Identity:
     def reset(self):
         pass
 
+
+class ConstantFilter:
+    def __init__(self, prev_filter, constant):
+        self.prev_filter = prev_filter
+        self.constant = constant
+
+    def __call__(self, x, **kwargs):
+        x = self.prev_filter(x, **kwargs)
+        return x * self.constant
+
+    def reset(self):
+        self.prev_filter.reset()
+
+
 class RewardFilter:
     """
     Incorrect reward normalization [copied from OAI code]
