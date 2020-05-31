@@ -55,7 +55,7 @@ class ValueDenseNet(nn.Module):
     fully connected hidden layers (by default 2 * 128-neuron layers),
     maps a state of size (state_dim) -> a scalar value.
     '''
-    def __init__(self, state_dim, init, hidden_sizes=(64, 64)):
+    def __init__(self, state_dim, init, init_scale=1.0, hidden_sizes=(64, 64)):
         '''
         Initializes the value network.
         Inputs:
@@ -71,12 +71,12 @@ class ValueDenseNet(nn.Module):
         prev = state_dim
         for h in hidden_sizes:
             l = nn.Linear(prev, h)
-            initialize_weights(l, init)
+            initialize_weights(l, init, scale=STD*init_scale)
             self.affine_layers.append(l)
             prev = h
 
         self.final = nn.Linear(prev, 1)
-        initialize_weights(self.final, init, scale=1.0)
+        initialize_weights(self.final, init, scale=init_scale)
 
     def forward(self, x):
         '''

@@ -100,7 +100,8 @@ class Trainer():
             self.params.NUM_FEATURES = self.NUM_FEATURES + 1
 
         # Value function optimization
-        self.val_model = value_net_class(self.NUM_FEATURES, self.INITIALIZATION)
+        self.val_model = value_net_class(self.NUM_FEATURES, self.INITIALIZATION,
+                self.INITIALIZATION_VALUE_SCALE)
         self.val_opt = optim.Adam(self.val_model.parameters(), lr=self.VAL_LR, eps=1e-5) 
         assert self.policy_model.discrete == (self.AGENT_TYPE == "discrete")
 
@@ -128,7 +129,7 @@ class Trainer():
         })
 
         if self.advanced_logging:
-            self.store.add_table('normalized_advantage', {
+            self.store.add_table('advantage_stats', {
                 'mean_pre_norm':float,
                 'std_pre_norm':float,
                 'opt_step':int,
@@ -416,21 +417,21 @@ class Trainer():
             old_pds = select_prob_dists(out_train, detach=True)
             val_old_pds = select_prob_dists(out_val, detach=True)
 
-            self.store.log_table_and_tb('normalized_advantage', {
+            self.store.log_table_and_tb('advantage_stats', {
                 'mean_pre_norm': torch.mean(saps.advantages),
                 'std_pre_norm': torch.std(saps.advantages),
             })
             nadv = adv_normalize(saps.advantages)
             nadv_skewness = torch.mean(nadv ** 3)
             nadv_kurtosis = torch.mean(nadv ** 4)
-            self.store.log_table_and_tb('normalized_advantage', {
+            self.store.log_table_and_tb('advantage_stats', {
                 'skewness': nadv_skewness,
                 'kurtosis': nadv_kurtosis,
                 'max': torch.max(nadv),
                 'min': torch.min(nadv), 
                 'opt_step':self.n_steps,
             })
-            self.store['normalized_advantage'].flush_row()
+            self.store['advantage_stats'].flush_row()
         # End logging code
 
         # Update the value function before unrolling the trajectories

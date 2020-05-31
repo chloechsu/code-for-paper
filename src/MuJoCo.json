@@ -32,6 +32,7 @@
     "norm_advantages": true,
     "train_steps": 500,
     "initialization": "orthogonal",
+    "initialization_value_scale": 1.0,
     "share_weights": false,
     "value_multiplier": 0.1,
     "value_clipping": true,

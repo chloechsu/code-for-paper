@@ -152,6 +152,7 @@ if __name__ == '__main__':
     parser.add_argument('--value-calc', type=str,
                         help='which value calculation to use')
     parser.add_argument('--initialization', type=str)
+    parser.add_argument('--initialization_value_scale', type=float)
 
     # General Policy Gradient parameters
     parser.add_argument('--num-actors', type=int, help='num actors (serial)',

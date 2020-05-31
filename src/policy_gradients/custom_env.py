@@ -1,9 +1,17 @@
+from collections import OrderedDict
 import numpy as np
 from gym.spaces.discrete import Discrete
 from gym.spaces.box import Box as Continuous
 import gym
 from .torch_utils import RunningStat, ZFilter, Identity, StateWithTime, RewardFilter, ConstantFilter
 from .torch_utils import add_gaussian_noise, add_uniform_noise, add_sparsity_noise
+
+def convert_state_to_array(obs):
+    '''Converts DMC style ordered dict observation to array.'''
+    if isinstance(obs, OrderedDict):
+        return np.concatenate([o.reshape(-1) for o in obs.values()])
+    else:
+        return obs
 
 class Env:
     '''
@@ -22,9 +30,6 @@ class Env:
     def __init__(self, game, norm_states, norm_rewards, params,
             add_t_with_horizon=None, clip_obs=None, clip_rew=None):
 
-        if game.startswith('SimpleEnv'):
-            self.env = SimpleEnv(game)
-
         self.env = gym.make(game)
         clip_obs = None if clip_obs < 0 else clip_obs
         clip_rew = None if clip_rew < 0 else clip_rew
@@ -39,9 +44,13 @@ class Env:
         self.num_actions = self.env.action_space.n if self.is_discrete else 0 \
                             if len(action_shape) == 0 else action_shape[0]
         
-        # Number of features
-        assert len(self.env.observation_space.shape) == 1
-        self.num_features = self.env.reset().shape[0]
+        if self.env.observation_space.shape is None:
+            self.num_features = convert_state_to_array(
+                    self.env.reset()).shape[0]
+        else:
+            assert len(self.env.observation_space.shape) == 1
+            # Number of features
+            self.num_features = self.env.reset().shape[0]
 
         # Support for state normalization or using time as a feature
         self.state_filter = Identity()
@@ -69,7 +78,7 @@ class Env:
 
     def reset(self):
         # Reset the state, and the running total reward
-        start_state = self.env.reset()
+        start_state = convert_state_to_array(self.env.reset())
         self.total_true_reward = 0.0
         self.counter = 0.0
         self.state_filter.reset()
@@ -77,6 +86,7 @@ class Env:
 
     def step(self, action):
         state, reward, is_done, info = self.env.step(action)
+        state = convert_state_to_array(state)
         state = self.state_filter(state)
         self.total_true_reward += reward
         self.counter += 1
