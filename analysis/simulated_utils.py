@@ -32,8 +32,10 @@ base_params = {
     'num_minibatches': 1,
     'clip_advantages': None,
     'sign_advantages': False,
-    'adv_norm': True,
-    'kl_penalty_direction': 'old_to_new',
+    'norm_advantages': True,
+    'kl_penalty_direction': 'new_to_old',
+    'kl_closed_form': True,
+    'kl_npg_form': False,
     'entropy_coeff': 0.0,
     'share_weights': False,
     'clip_grad_norm': -1,
@@ -332,30 +334,26 @@ def get_reward_to_go(rewards, gamma=0.99):
     return np.array(all_discounted_cumsums)
  
 
-def get_obs_acs_rewards_advs(trajectories, adv_norm=True):
+def get_obs_acs_rewards_advs(trajectories):
     obs = np.concatenate([tau["observation"] for tau in trajectories], axis=0)
     acs = np.concatenate([tau["action"] for tau in trajectories], axis=0)
     rewards = np.concatenate([tau["reward"] for tau in trajectories])
     reward_to_go = np.concatenate(
         [get_reward_to_go(tau["reward"]) for tau in trajectories])
-    if adv_norm:
-        advs = (reward_to_go - np.mean(reward_to_go)) / (np.std(reward_to_go) + 1e-8)
-    else:
-        advs = reward_to_go
+    advs = reward_to_go - np.mean(reward_to_go)
     return obs, acs, rewards, advs
 
 
 def step(env, policy, params):
     trajs, steps_in_trajs = sample_trajectories_by_batch_size(
         env, policy, params.batch_size, params.max_episode_len)
-    obs, acs, rewards, advs = get_obs_acs_rewards_advs(trajs,
-            adv_norm=params.adv_norm)
+    obs, acs, rewards, advs = get_obs_acs_rewards_advs(trajs)
     obs = torch.Tensor(obs)
     acs = torch.Tensor(acs)
     advs = torch.Tensor(advs)
     with torch.no_grad():
-        old_pds = policy(obs).detach()
-        old_log_ps = policy.get_loglikelihood(old_pds, acs).detach()
+        old_pds = policy(obs)
+        old_log_ps = policy.get_loglikelihood(old_pds, acs)
     loss = ppo_step(obs, acs, old_log_ps, None, None, None, advs, policy, params, None, None)
     return_dict = {
         'loss': loss.detach().item(),
