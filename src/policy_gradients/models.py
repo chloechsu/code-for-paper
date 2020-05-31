@@ -71,7 +71,7 @@ class ValueDenseNet(nn.Module):
         prev = state_dim
         for h in hidden_sizes:
             l = nn.Linear(prev, h)
-            initialize_weights(l, init, scale=STD*init_scale)
+            initialize_weights(l, init, scale=STD)
             self.affine_layers.append(l)
             prev = h
 

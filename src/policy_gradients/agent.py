@@ -101,7 +101,7 @@ class Trainer():
 
         # Value function optimization
         self.val_model = value_net_class(self.NUM_FEATURES, self.INITIALIZATION,
-                self.INITIALIZATION_VALUE_SCALE)
+                init_scale=self.INITIALIZATION_VALUE_SCALE)
         self.val_opt = optim.Adam(self.val_model.parameters(), lr=self.VAL_LR, eps=1e-5) 
         assert self.policy_model.discrete == (self.AGENT_TYPE == "discrete")
 
