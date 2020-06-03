@@ -33,6 +33,7 @@
     "train_steps": 500,
     "initialization": "orthogonal",
     "initialization_value_scale": 1.0,
+    "adjust_init_std": false,
     "share_weights": false,
     "value_multiplier": 0.1,
     "value_clipping": true,
@@ -49,5 +50,7 @@
     "kl_npg_form": false,
     "reward_gaussian_noise": 0.0,
     "reward_uniform_noise": 0.0,
-    "reward_sparsity": 0.0
+    "reward_sparsity": 0.0,
+    "strict_action_bounds": false,
+    "clip_action": false
 }

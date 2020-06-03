@@ -20,7 +20,7 @@ old_to_new_params = {'kl_penalty_direction': 'old_to_new', 'kl_penalty_coeff': 3
 clip_params = {'kl_penalty_coeff': 0., 'clip_eps': 0.2}
 plain_params = {'kl_penalty_coeff': 0., 'clip_eps': None}
 
-comparisons = {
+default_comparisons = {
     'Reverse KL': new_to_old_params,
     'Forward KL': old_to_new_params,
     'Clipping': clip_params,
@@ -116,10 +116,9 @@ class TwoActionEnv(gym.Env):
 
 class BanditEnv(gym.Env):
     '''
-    A simple single-state environment with 3 discrete actions.
-    Action 0, 1, 2 have reward 1, 0.5, -50.
+    A simple single-state environment with discrete actions.
     '''
-    def __init__(self, avg_rewards, noise_std=1e-3):
+    def __init__(self, avg_rewards, noise_std=1e-3, **kwargs):
         self.action_dim = len(avg_rewards)
         self.avg_rewards = avg_rewards
         self.obs_dim = 1
@@ -142,17 +141,17 @@ class BanditEnv(gym.Env):
         return obs, reward, done, {}
 
 
-class CtsBanditEnv(gym.Env):
+class SinglePeakCtsBanditEnv(gym.Env):
     '''
     A simple single-state environment with one-dimensional continuous actions.
-    Reward is 0.5 for a in (0.5, 2), 1 for a in (-1.0, -0.8), and 0 otherwise.
+    Reward is 1.0 for a in (0.5, 2), and 0 otherwise.
     '''
-    def __init__(self, noise_std=1e-3):
-        self.action_dim = 1
+    def __init__(self, noise_std=1e-3, action_dim=1):
+        self.action_dim = action_dim
         self.obs_dim = 1
         self.noise_std = noise_std
-        low = np.array([-3])
-        high = np.array([3])
+        low = np.array([-3] * action_dim)
+        high = np.array([3] * action_dim)
         self.action_space = Continuous(low=low, high=high, dtype=np.float32) 
         self.observation_space = Continuous(
                 low=np.zeros(self.obs_dim, dtype=np.float32),
@@ -167,7 +166,106 @@ class CtsBanditEnv(gym.Env):
     def step(self, action):
         obs = np.random.rand(self.obs_dim)
         reward = self.noise_std * np.random.normal()
-        if action > 0.5 and action < 2.0:
+        action = np.array(action)
+        assert len(action) == self.action_dim
+        # Highest reward possible is 1.
+        reward += ((action > 0.5) & (action < 2.0)).sum() / self.action_dim
+        done = True
+        return obs, reward, done, {}
+
+
+class SingleSmallPeakCtsBanditEnv(gym.Env):
+    '''
+    A simple single-state environment with one-dimensional continuous actions.
+    Reward is 1.0 for a in (-1, -0.8), and 0 otherwise.
+    '''
+    def __init__(self, noise_std=1e-3, action_dim=1):
+        self.action_dim = action_dim
+        self.obs_dim = 1
+        self.noise_std = noise_std
+        low = np.array([-1.5] * action_dim)
+        high = np.array([1.5] * action_dim)
+        self.action_space = Continuous(low=low, high=high, dtype=np.float32) 
+        self.observation_space = Continuous(
+                low=np.zeros(self.obs_dim, dtype=np.float32),
+                high=np.ones(self.obs_dim, dtype=np.float32),
+                dtype=np.float32) 
+        self.reset()
+
+    def reset(self):
+        obs = np.random.rand(self.obs_dim)
+        return obs
+
+    def step(self, action):
+        obs = np.random.rand(self.obs_dim)
+        reward = self.noise_std * np.random.normal()
+        action = np.array(action)
+        assert len(action) == self.action_dim
+        # Highest reward possible is 1.
+        reward += ((action > -1.0) & (action < -0.8)).sum() / self.action_dim
+        done = True
+        return obs, reward, done, {}
+
+
+class ClippedCtsBanditEnv(gym.Env):
+    '''
+    A simple single-state environment with one-dimensional continuous actions.
+    '''
+    def __init__(self, noise_std=1e-3, action_dim=1):
+        self.action_dim = action_dim
+        self.obs_dim = 1
+        self.noise_std = noise_std
+        low = np.array([-1] * action_dim)
+        high = np.array([1] * action_dim)
+        self.action_space = Continuous(low=low, high=high, dtype=np.float32) 
+        self.observation_space = Continuous(
+                low=np.zeros(self.obs_dim, dtype=np.float32),
+                high=np.ones(self.obs_dim, dtype=np.float32),
+                dtype=np.float32) 
+        self.reset()
+
+    def reset(self):
+        obs = np.random.rand(self.obs_dim)
+        return obs
+
+    def step(self, action):
+        action = np.clip(action, self.action_space.low, self.action_space.high)
+        obs = np.random.rand(self.obs_dim)
+        reward = self.noise_std * np.random.normal()
+        action = np.array(action)
+        assert len(action) == self.action_dim
+        # Highest reward possible is 1.
+        reward += (1.0 - np.power(action + 0.8, 2)).sum() / self.action_dim
+        done = True
+        return obs, reward, done, {}
+
+
+class TwoPeakCtsBanditEnv(gym.Env):
+    '''
+    A simple single-state environment with one-dimensional continuous actions.
+    Reward is 0.5 for a in (0.5, 1), 1 for a in (-1.0, -0.8), and 0 otherwise.
+    '''
+    def __init__(self, noise_std=1e-3):
+        self.action_dim = 1
+        self.obs_dim = 1
+        self.noise_std = noise_std
+        low = np.array([-1.5])
+        high = np.array([1.5])
+        self.action_space = Continuous(low=low, high=high, dtype=np.float32) 
+        self.observation_space = Continuous(
+                low=np.zeros(self.obs_dim, dtype=np.float32),
+                high=np.ones(self.obs_dim, dtype=np.float32),
+                dtype=np.float32) 
+        self.reset()
+
+    def reset(self):
+        obs = np.random.rand(self.obs_dim)
+        return obs
+
+    def step(self, action):
+        obs = np.random.rand(self.obs_dim)
+        reward = self.noise_std * np.random.normal()
+        if action > 0.5 and action < 1.0:
             reward += 0.5
         if action > -1.0 and action < -0.8:
             reward += 1.0
@@ -190,6 +288,10 @@ class SimpleDiscPolicy(DiscPolicy):
     def forward(self, x):
         return torch.nn.functional.softmax(self.logits).repeat(
                 x.shape[0], 1)
+
+    def calc_kl(self, p, q, **kwargs):
+        return super(SimpleDiscPolicy, self).calc_kl(p, q)
+
 
 
 class SimpleCtsPolicy(CtsPolicy):
@@ -378,7 +480,7 @@ def train(env, policy, params, n_steps):
 
 
 def compare(env, policy_type, n_steps=20, repeats=10, seed=0, policy_init=None,
-        **kwargs):
+        comparisons=None, SGD=False, **kwargs):
     np.random.seed(seed)
     # Handle different policy classes.
     policy_type = policy_type.lower()
@@ -389,16 +491,25 @@ def compare(env, policy_type, n_steps=20, repeats=10, seed=0, policy_init=None,
     policy_cls = policy_cls_map[policy_type]
     base_params_ = base_params.copy()
     base_params_.update(**kwargs)
+    if comparisons is None:
+        comparisons = default_comparisons
     data = None
     for i, name in enumerate(comparisons.keys()):
         params = base_params_.copy()
         params.update(comparisons[name])
         for j in range(repeats):
-            policy = policy_cls(env.action_dim, init=policy_init,
-                    action_space_low=env.action_space.low,
-                    action_space_high=env.action_space.high)
-            params['policy_adam'] = torch.optim.Adam(policy.parameters(),
-                    lr=params['lr'])
+            if policy_type != 'discrete':
+                policy = policy_cls(env.action_dim, init=policy_init,
+                        action_space_low=env.action_space.low,
+                        action_space_high=env.action_space.high)
+            else:
+                policy = policy_cls(env.action_dim, init=policy_init)
+            if SGD:
+                params['policy_adam'] = None
+                params['ppo_lr'] = params['lr']
+            else:
+                params['policy_adam'] = torch.optim.Adam(policy.parameters(),
+                        lr=params['lr'])
             data_this_run = train(env, policy, Parameters(params), n_steps)
             data_this_run['method'] = name
             if data is None:
