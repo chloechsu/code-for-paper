@@ -153,6 +153,9 @@ if __name__ == '__main__':
                         help='which value calculation to use')
     parser.add_argument('--initialization', type=str)
     parser.add_argument('--initialization_value_scale', type=float)
+    parser.add_argument('--adjust_init_std', type=bool,
+                        help='whether to scale initial gaussian std according '
+                        'to action space')
 
     # General Policy Gradient parameters
     parser.add_argument('--num-actors', type=int, help='num actors (serial)',
@@ -219,6 +222,11 @@ if __name__ == '__main__':
     parser.add_argument('--clip-advantages', type=float, help='clip adv eps')
     parser.add_argument('--sign-advantages', type=float, help='take adv sign')
     parser.add_argument('--norm-advantages', type=float, help='normalize adv')
+
+    parser.add_argument('--clip_action', type=bool, help='whether to clip '
+            'actions to the action space range')
+    parser.add_argument('--strict_action_bounds', type=bool,
+            help='whether to return 0 reward for out-of-bound actions.')
 
     # Reward stochasticity params.
     parser.add_argument('--reward_gaussian_noise', type=float,
