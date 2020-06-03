@@ -33,6 +33,22 @@ def paper_constraints_logging(agent, saps, old_pds, table):
         'opt_step':agent.n_steps,
     }
 
+    # Hacky way to identify gaussian policy
+    if len(old_pds) == 2 and old_pds[0].shape != old_pds[1].shape:
+        old_pd_means = ch.mean(old_pds[0].detach(), dim=0)
+        old_pd_means_std = ch.std(old_pds[0].detach(), dim=0)
+        if old_pd_means.dim() == 0:
+            try:
+                row[f'mean_0'] = old_pd_means.item()
+                row[f'mean_std_0'] = old_pd_means_std.item()
+            except:
+                row[f'mean_0'] = np.nan
+                row[f'mean_std_0'] = np.nan
+        else:
+            for d in range(old_pd_means.shape[0]):
+                row[f'mean_{d}'] = old_pd_means[d]
+                row[f'mean_std_{d}'] = old_pd_means_std[d]
+
     for k in row:
         if k != 'opt_step':
             row[k] = float(row[k])

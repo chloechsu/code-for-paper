@@ -256,7 +256,9 @@ class CtsPolicy(nn.Module):
     which parameterize a gaussian distribution.
     '''
     def __init__(self, state_dim, action_dim, init, hidden_sizes=HIDDEN_SIZES,
-                 time_in_state=False, share_weights=False, **unused_args):
+                 time_in_state=False, share_weights=False,
+                 action_space_low=None, action_space_high=None,
+                 adjust_init_std=False):
         super().__init__()
         self.activation = ACTIVATION()
         self.action_dim = action_dim
@@ -285,8 +287,20 @@ class CtsPolicy(nn.Module):
 
             initialize_weights(self.final_value, init, scale=1.0)
 
-        stdev_init = ch.zeros(action_dim)
-        self.log_stdev = ch.nn.Parameter(stdev_init)
+        if adjust_init_std: 
+            assert action_space_low is not None
+            assert action_space_high is not None
+            assert np.all(-np.inf < action_space_low)
+            assert np.all(np.inf > action_space_high)
+            # symmetric action spaces
+            # initializing final mean to be around 0 only makes sense if symmetric
+            assert (np.mean(action_space_low + action_space_high).round(2) == 0.0).all()
+            # initialize std such that high and low are at ~ 2 STD
+            stdev_init = (action_space_high - action_space_low) / 4
+            log_stdev_init = ch.Tensor(np.log(stdev_init))
+        else:
+            log_stdev_init = ch.Tensor(ch.zeros(action_dim))
+        self.log_stdev = ch.nn.Parameter(log_stdev_init)
 
     def forward(self, x):
         # If the time is in the state, discard it
@@ -397,7 +411,7 @@ class CtsBetaPolicy(nn.Module):
     '''
     def __init__(self, state_dim, action_dim, init, hidden_sizes=HIDDEN_SIZES,
                  time_in_state=False, share_weights=False,
-                 action_space_low=None, action_space_high=None):
+                 action_space_low=None, action_space_high=None, **unused_args):
         super().__init__()
         assert action_space_low is not None
         assert action_space_high is not None

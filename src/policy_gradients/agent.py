@@ -76,7 +76,8 @@ class Trainer():
                                              self.INITIALIZATION,
                                              action_space_low=self.ACTION_SPACE_LOW,
                                              action_space_high=self.ACTION_SPACE_HIGH,
-                                             time_in_state=time_in_state)
+                                             time_in_state=time_in_state,
+                                             adjust_init_std=self.ADJUST_INIT_STD)
 
         opts_ok = (self.PPO_LR == -1 or self.PPO_LR_ADAM == -1)
         assert opts_ok, "One of ppo_lr and ppo_lr_adam must be -1 (off)."
@@ -147,6 +148,11 @@ class Trainer():
                 'max_ratio':float,
                 'opt_step':int
             }
+            gaussian_policy_stats_cols = {f'mean_{d}': float for d in
+                    range(len(self.params.ACTION_SPACE_LOW))}
+            gaussian_policy_stats_cols.update({f'mean_std_{d}': float for d in
+                    range(len(self.params.ACTION_SPACE_LOW))})
+            paper_constraint_cols.update(gaussian_policy_stats_cols)
 
             self.store.add_table('paper_constraints_train',
                                         paper_constraint_cols)
@@ -466,6 +472,7 @@ class Trainer():
             self.VALUE_SCHEDULER.step()
 
         if should_adv_log:
+
             paper_constraints_logging(self, saps, old_pds,
                             table='paper_constraints_train')
             paper_constraints_logging(self, val_saps, val_old_pds,

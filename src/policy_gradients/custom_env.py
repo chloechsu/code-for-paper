@@ -2,6 +2,7 @@ from collections import OrderedDict
 import numpy as np
 from gym.spaces.discrete import Discrete
 from gym.spaces.box import Box as Continuous
+from gym.wrappers import ClipAction
 import gym
 from .torch_utils import RunningStat, ZFilter, Identity, StateWithTime, RewardFilter, ConstantFilter
 from .torch_utils import add_gaussian_noise, add_uniform_noise, add_sparsity_noise
@@ -76,6 +77,11 @@ class Env:
         # Running total reward (set to 0.0 at resets)
         self.total_true_reward = 0.0
 
+        # OpenAI baselines use clipped actions wrapper, following their clipping
+        if params.CLIP_ACTION:
+            self.env = ClipAction(self.env) 
+        self.strict_action_bounds = params.STRICT_ACTION_BOUNDS
+
     def reset(self):
         # Reset the state, and the running total reward
         start_state = convert_state_to_array(self.env.reset())
@@ -86,6 +92,11 @@ class Env:
 
     def step(self, action):
         state, reward, is_done, info = self.env.step(action)
+
+        if self.strict_action_bounds:
+            if not self.env.action_space.contains(action):
+                reward = -10.0
+
         state = convert_state_to_array(state)
         state = self.state_filter(state)
         self.total_true_reward += reward
