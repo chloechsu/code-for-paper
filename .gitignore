@@ -2,4 +2,5 @@
 *.out
 .DS_Store
 *.log
-*.ipynb_checkpoints/*
+analyais/.ipynb_checkpoints/*
+*.swp
