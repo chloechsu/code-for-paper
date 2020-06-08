@@ -417,8 +417,8 @@ class CtsBetaPolicy(nn.Module):
         assert action_space_high is not None
         assert np.all(-np.inf < action_space_low)
         assert np.all(np.inf > action_space_high)
-        self.action_space_low = action_space_low
-        self.action_space_high = action_space_high
+        self.action_space_low = action_space_low - 0.5
+        self.action_space_high = action_space_high + 0.5
 
         self.activation = ACTIVATION()
         self.action_dim = action_dim
