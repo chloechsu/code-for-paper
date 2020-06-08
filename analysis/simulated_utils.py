@@ -249,8 +249,8 @@ class TwoPeakCtsBanditEnv(gym.Env):
         self.action_dim = 1
         self.obs_dim = 1
         self.noise_std = noise_std
-        low = np.array([-1.5])
-        high = np.array([1.5])
+        low = np.array([-5])
+        high = np.array([5])
         self.action_space = Continuous(low=low, high=high, dtype=np.float32) 
         self.observation_space = Continuous(
                 low=np.zeros(self.obs_dim, dtype=np.float32),
@@ -264,11 +264,14 @@ class TwoPeakCtsBanditEnv(gym.Env):
 
     def step(self, action):
         obs = np.random.rand(self.obs_dim)
-        reward = self.noise_std * np.random.normal()
-        if action > 0.5 and action < 1.0:
-            reward += 0.5
-        if action > -1.0 and action < -0.8:
-            reward += 1.0
+        # reward = self.noise_std * np.random.normal()
+        # if action > 0.5 and action < 2.0:
+        #     reward += 0.5
+        # if action > -1.5 and action < -0.8:
+        #     reward += 1.0
+        # Two peaks at -1.3 and 0.5
+        reward = 1.1 * np.exp(-1.2*np.power(action-(-2), 2)) + 0.9 * np.exp(-0.9*np.power(action-(1), 2))
+        reward = reward.sum()
         done = True
         return obs, reward, done, {}
 
