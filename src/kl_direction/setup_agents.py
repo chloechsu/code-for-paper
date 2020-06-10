@@ -14,11 +14,12 @@ PARAMS = {
         "HalfCheetah-v2", "InvertedPendulum-v2", "Reacher-v2",
         "InvertedDoublePendulum-v2"],
     "mode": ["ppo"],
-    "clip_eps": [0.2, 1e8],
-    "kl_penalty_coeff": [0.0, 0.1, 1.0, 3.0],
+    "clip_eps": [1e8],
+    "kl_penalty_coeff": [3],
     "ppo_lr_adam": [3e-4] * 10,
-    "kl_penalty_direction": ["new_to_old"],
-    "out_dir": ["base_exp/agents"],
+    "kl_penalty_direction": ["new_to_old", "old_to_new"],
+    "out_dir": ["kl_direction/agents"],
+    "cpu": [True],
     "advanced_logging": [False],
 }
 

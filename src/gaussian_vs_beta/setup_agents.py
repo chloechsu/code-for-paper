@@ -15,10 +15,10 @@ PARAMS = {
         "InvertedDoublePendulum-v2"],
     "mode": ["ppo"],
     "clip_eps": [0.2, 1e8],
-    "kl_penalty_coeff": [0.0, 0.1, 1.0, 3.0],
+    "kl_penalty_coeff": [0.0, 3.0],
     "ppo_lr_adam": [3e-4] * 10,
     "kl_penalty_direction": ["new_to_old"],
-    "out_dir": ["base_exp/agents"],
+    "out_dir": ["gaussian_vs_beta/agents"],
     "advanced_logging": [False],
 }
 

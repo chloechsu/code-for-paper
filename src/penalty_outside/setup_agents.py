@@ -9,16 +9,18 @@ with open("../MuJoCo.json") as f:
     BASE_CONFIG = json.load(f)
 
 PARAMS = {
-    "policy_net_type": ["CtsPolicy", "CtsBetaPolicy"],
+    "policy_net_type": ["CtsPolicy"],
     "game": ["Walker2d-v2", "Humanoid-v2", "Swimmer-v2", "Hopper-v2",
         "HalfCheetah-v2", "InvertedPendulum-v2", "Reacher-v2",
         "InvertedDoublePendulum-v2"],
     "mode": ["ppo"],
-    "clip_eps": [0.2, 1e8],
-    "kl_penalty_coeff": [0.0, 0.1, 1.0, 3.0],
+    "clip_eps": [0.2],
+    "kl_penalty_coeff": [0.0],
     "ppo_lr_adam": [3e-4] * 10,
     "kl_penalty_direction": ["new_to_old"],
-    "out_dir": ["base_exp/agents"],
+    "strict_action_bounds": [True],
+    "adjust_init_std": [False],
+    "out_dir": ["penalty_outside/agents"],
     "advanced_logging": [False],
 }
 
