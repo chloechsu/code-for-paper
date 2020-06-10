@@ -1,12 +1,12 @@
-# Code for "Questioning Proximal Policy Optimization with Multiplicative Weights"
+# Code for "Revisiting Design Choices in Proximal Policy Optimization"
 
 This repository is is forked from the open-source code for ICLR 2020 paper
 "Implementation Matters in Deep RL: A Case Study on PPO and TRPO":
 <https://github.com/implementation-matters/code-for-paper>.
 
-We thoroughly checked the open-source code and fixed two bugs in the initial
-open source version after communicating with the authors, add customized the
-code for experimenting with KL directions.
+We checked the existing open-source code and fixed two bugs in the initial
+open source version after communicating with the authors, added customized 
+code for experimenting with KL directions and Beta policy.
 
 All our plots are produced via Jupyter notebooks in the ``analysis`` folder.
 
@@ -18,31 +18,15 @@ import gym
 gym.make_env("Humanoid-v2")
 ```
 
-To reproduce our results in Figure 1, Table 3, Figure 5, and Figure 6, one can run the
-following commands:
-1. ``cd src/reward_scaling/``
+To reproduce our MuJoCo figures: run the following commands:
+1. ``cd src/gaussian_vs_beta/``
 2. ``python setup_agents.py``: the setup\_agents.py script contains detailed
 experiments settings.
 3. ``cd ../``
 4. Edit the ``NUM_THREADS`` variables in the ``run_agents.py`` file according to your local machine.
 5. Train the agents: ``python run_agents.py reward_scaling/agent_configs``
-6. Plot results in the ``analysis/figure1_table3_figure5_figure6.ipynb`` notebook.
-
-
-To reproduce our results in Figure 7,
-following commands:
-1. ``cd src/kl_direction_experiment/``
-2. ``python setup_agents.py``: the setup\_agents.py script contains detailed
-experiments settings.
-3. ``cd ../``
-4. Edit the ``NUM_THREADS`` variables in the ``run_agents.py`` file according to your local machine.
-5. Train the agents: ``python run_agents.py kl_direction_experiment/agent_configs``
-6. Plot results in the ``analysis/appendix_figure7.ipynb`` notebook.
-
-
-To reproduce Figure 2, see the ``analysis/figure2.ipynb`` notebook.
-
-To reproduce Figure 3, see the ``analysis/figure3.ipynb`` notebook.
+6. Repeat the above with ``src/kl_direction`` and ``src/penalty_outside`` in step 1.
+7. Plot results in the corresponding jupyter notebooks in the analysis folder.
 
 
 For more details about the code, see the README file in the original github repo:
