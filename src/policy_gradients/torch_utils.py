@@ -1,6 +1,10 @@
 import torch as ch
 from torch.distributions.categorical import Categorical
 import numpy as np
+
+import torch.nn as nn
+import math
+import torch.nn.functional as F
 '''
 Common functions/utilities implemented in PyTorch
 Sorted into categories:
@@ -12,6 +16,11 @@ Sorted into categories:
 - Initialization helpers
 '''
 
+### constants
+HIDDEN_SIZES = (64, 64)
+ACTIVATION = nn.Tanh
+STD = 2**0.5
+
 ########################
 ### GENERAL UTILITY FUNCTIONS:
 # Parameters, unroll, cu_tensorize, cpu_tensorize, shape_equal_cmp,
@@ -19,7 +28,6 @@ Sorted into categories:
 ########################
 
 CKPTS_TABLE = 'checkpoints'
-
 
 class Parameters():
     '''
@@ -565,4 +573,40 @@ def add_uniform_noise(reward, p, high=1., low=-1.):
 def add_sparsity_noise(reward, p):
     random_mask = np.random.binomial(1, p)
     return (1 - random_mask) * reward
+
+'''
+Neural network models for estimating value and policy functions
+Contains:
+- Initialization utilities
+- Value Network(s)
+- Policy Network(s)
+- Retrieval Function
+'''
+
+########################
+### INITIALIZATION UTILITY FUNCTIONS:
+# initialize_weights
+########################
+
+def initialize_weights(mod, initialization_type, scale=STD):
+    '''
+    Weight initializer for the models.
+    Inputs: A model, Returns: none, initializes the parameters
+    '''
+    for p in mod.parameters():
+        if initialization_type == "normal":
+            p.data.normal_(0.01)
+        elif initialization_type == "xavier":
+            if len(p.data.shape) >= 2:
+                nn.init.xavier_uniform_(p.data)
+            else:
+                p.data.zero_()
+        elif initialization_type == "orthogonal":
+            if len(p.data.shape) >= 2:
+                orthogonal_init(p.data, gain=scale)
+            else:
+                p.data.zero_()
+        else:
+            raise ValueError("Need a valid initialization key")
+
 
