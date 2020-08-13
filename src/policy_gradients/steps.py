@@ -26,7 +26,7 @@ Layout of this file:
 def adv_normalize(adv):
     std = adv.std()
     
-    assert std != 0. and not ch.isnan(std), 'Need nonzero std'
+    #assert std != 0. and not ch.isnan(std), 'Need nonzero std'
     n_advs = (adv - adv.mean())/(adv.std()+1e-8)
     return n_advs
 

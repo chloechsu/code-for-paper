@@ -42,7 +42,7 @@ class DiscretizedCtsPolicy(DiscPolicy):
 
     def _disc_action_to_cts(self, actions):
         # First map to 0 to 1
-        cts_actions_normalized = actions / (self.n_actions_per_dim - 1)
+        cts_actions_normalized = actions.float() / (self.n_actions_per_dim - 1)
         return cts_actions_normalized * (self.action_space_high -
                 self.action_space_low) + self.action_space_low
 
